@@ -5,3 +5,11 @@ input.form-control {
 body {
     padding-top: 36px;
 }
+
+.whiteicon, #setwhite {
+    color: white;
+}
+
+.bluecolor {
+    color: blue;
+}
