@@ -3,7 +3,8 @@ input.form-control {
 }
 
 body {
-    padding-top: 36px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .whiteicon, #setwhite {
@@ -12,4 +13,37 @@ body {
 
 .bluecolor {
     color: blue;
+}
+
+.bigfont {
+    font-size: 18px;
+}
+
+.no-left-padding {
+    padding-left: 0px;
+}
+
+.no-left-margin {
+    margin-left: 0px;
+}
+
+.customborder {
+    border-right: 1px solid #ccc;
+    height:700px
+}
+
+.right-margin {
+    padding-right: 27px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.button-padding {
+    padding-top: 15px;
+}
+
+.list-right-padding {
+    padding-right: 10px;
 }
