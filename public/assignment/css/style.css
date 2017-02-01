@@ -12,7 +12,7 @@ body {
 }
 
 .bluecolor {
-    color: blue;
+    color: darkcyan;
 }
 
 .bigfont {
@@ -73,11 +73,15 @@ a:hover {
 }
 
 .table-margin {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .ss-form-padding {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.right-glyph-margin{
+    margin-right: 10px;
 }
