@@ -90,3 +90,15 @@ a:hover {
 .right-glyph-margin{
     margin-right: 10px;
 }
+
+.center-align {
+    text-align: center;
+}
+
+.top-padding {
+    padding-top: 50px;
+}
+
+.glyph-size {
+    font-size: 70px;
+}
