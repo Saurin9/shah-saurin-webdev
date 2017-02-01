@@ -8,36 +8,36 @@ body {
     background-color: lightsteelblue;
 }
 
-.bg-color {
+.ss-bg-color {
     background-color: lightsteelblue;
 }
 
-.whiteicon, #setwhite {
+.ss-whiteicon, #setwhite {
     color: white;
 }
 
-.bluecolor {
+.ss-bluecolor {
     color: darkcyan;
 }
 
-.bigfont {
+.ss-bigfont {
     font-size: 18px;
 }
 
-.no-left-padding {
+.ss-no-left-padding {
     padding-left: 0px;
 }
 
-.no-left-margin {
+.ss-no-left-margin {
     margin-left: 0px;
 }
 
-.customborder {
+.ss-customborder {
     border-right: 1px solid #ccc;
     height:700px
 }
 
-.right-margin {
+.ss-right-margin {
     padding-right: 27px;
 }
 
@@ -45,23 +45,23 @@ a:hover {
     text-decoration: none;
 }
 
-.button-padding {
+.ss-button-padding {
     padding-top: 15px;
 }
 
-.list-right-padding {
+.ss-list-right-padding {
     padding-right: 10px;
 }
 
-.text-center {
+.ss-text-center {
     text-align: center;
 }
 
-.top-spacing {
+.ss-top-spacing {
     padding-top: 65px;
 }
 
-.navbarcolor {
+.ss-navbarcolor {
     background-color: red;
 }
 
@@ -77,7 +77,7 @@ a:hover {
     opacity: 0.7;
 }
 
-.table-margin {
+.ss-table-margin {
     padding-right: 7px;
     padding-left: 7px;
 }
@@ -87,15 +87,15 @@ a:hover {
     padding-right: 15px;
 }
 
-.right-glyph-margin{
+.ss-right-glyph-margin{
     margin-right: 10px;
 }
 
-.center-align {
+.ss-center-align {
     text-align: center;
 }
 
-.top-padding {
+.ss-top-padding {
     padding-top: 50px;
 }
 

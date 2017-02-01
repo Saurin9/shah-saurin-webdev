@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page-New</title>
+    <title>Page Edit</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -17,15 +17,15 @@
 
             <div class="col-sm-4">
                 <div class="navbar-brand pull-left hidden-xs">
-                    <a href="/assignment/page-list.html">
+                    <a href="/assignment/pages/page-list.html">
                         <span class="glyphicon glyphicon-chevron-left" id="setwhite"> </span>
                     </a>
                 </div>
 
                 <div class="navbar-text pull-right hidden-xs">
                     <p>
-                        <a href="/assignment/website-new.html" class="navbar-link pull-right">
-                                <span class="glyphicon glyphicon-plus whiteicon">
+                        <a href="/assignment/pages/page-new.html" class="navbar-link pull-right">
+                                <span class="glyphicon glyphicon-plus ss-whiteicon">
                                 </span>
                         </a>
                     </p>
@@ -38,20 +38,20 @@
             </div>
 
             <div class="navbar-header col-sm-8">
-                <div class="navbar-brand pull-left visibble-xs">
-                    <a href="/assignment/page-list.html">
+                <div class="navbar-brand pull-left visible-xs">
+                    <a href="/assignment/pages/page-list.html">
                         <span class="glyphicon glyphicon-chevron-left" id="setwhite"> </span>
                     </a>
                 </div>
-                <div class="navbar-text pull-right right-glyph-margin">
-                    <a href="/assignment/page-list.html">
-                        <span class="glyphicon glyphicon-ok whiteicon"></span>
+                <div class="navbar-text pull-right ss-right-glyph-margin">
+                    <a href="/assignment/pages/page-list.html">
+                        <span class="glyphicon glyphicon-ok ss-whiteicon"></span>
                     </a>
                 </div>
-                <div class="navbar-header whiteicon">
+                <div class="navbar-header ss-whiteicon">
                     <!--<a class="navbar-brand no-left-padding no-left-margin">-->
                     <a class="navbar-brand">
-                        <span class="whiteicon"> New Page </span>
+                        <span class="ss-whiteicon"> Edit Page </span>
                     </a>
                 </div>
 
@@ -64,50 +64,50 @@
 
     <div class="row">
 
-        <div class="col-sm-4 hidden-xs customborder">
+        <div class="col-sm-4 hidden-xs ss-customborder">
             <ul class="list-group list-unstyled">
 
-                <li class="list-group-item bluecolor bigfont bg-color">
+                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
                     <a href="page-list.html"> Blog Post
                     </a>
-                    <a href="/assignment/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right bluecolor">
+                    <a href="/assignment/pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
                         <span>
                     </a>
                 </li>
 
-                <li class="list-group-item bluecolor bigfont bg-color">
+                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
                     <a href="page-list.html"> Blogs
                     </a>
-                    <a href="/assignment/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right bluecolor">
+                    <a href="/assignment/pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
                             <span>
                     </a>
                 </li>
 
-                <li class="list-group-item bluecolor bigfont bg-color">
+                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
                     <a href="page-list.html"> Home
                     </a>
-                    <a href="/assignment/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right bluecolor">
+                    <a href="/assignment/pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
                             <span>
                     </a>
                 </li>
 
-                <li class="list-group-item bluecolor bigfont bg-color">
+                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
                     <a href="page-list.html"> About
                     </a>
-                    <a href="/assignment/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right bluecolor">
+                    <a href="/assignment/pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
                             <span>
                     </a>
                 </li>
 
-                <li class="list-group-item bluecolor bigfont bg-color">
+                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
                     <a href="page-list.html"> Contact Us
                     </a>
-                    <a href="/assignment/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right bluecolor">
+                    <a href="/assignment/pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
                             <span>
                     </a>
                 </li>
@@ -118,18 +118,22 @@
 
 
 
-        <div class="col-sm-8 right-margin">
+        <div class="col-sm-8 ss-right-margin">
             <div>
                 <label for="Name">
                     Name
                 </label>
-                <input id="Name" type="text" class="form-control right-margin" placeholder="Page Name"/>
+                <input id="Name" type="text" class="form-control ss-right-margin" placeholder="Page Name"/>
             </div>
             <div>
                 <label for="Title">
                     Title
                 </label>
-                <input id="Title" type="text" class="form-control right-margin" placeholder="Page Title"/>
+                <input id="Title" type="text" class="form-control ss-right-margin" placeholder="Page Title"/>
+            </div>
+            <div class="ss-button-padding">
+                <a class="btn btn-danger btn-block form-control"
+                   href="/assignment/pages/page-list.html">Delete</a>
             </div>
         </div>
     </div>
@@ -138,10 +142,10 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid bg-primary">
         <div class="row">
-            <div class="navbar-text pull-right right-glyph-margin">
+            <div class="navbar-text pull-right ss-right-glyph-margin">
                 <div class="col-xs-3">
-                    <a href="/assignment/profile.html">
-                        <span class="glyphicon glyphicon-user whiteicon"></span>
+                    <a href="/assignment/user/profile.html">
+                        <span class="glyphicon glyphicon-user ss-whiteicon"></span>
                     </a>
                 </div>
             </div>
