@@ -3,14 +3,14 @@
     <div class="container-fluid bg-primary">
         <div class="row">
             <div class="navbar-header col-xs-12">
-                <a class="navbar-brand pull-left " href="/assignment/User/profile.html">
+                <a class="navbar-brand pull-left " href="#/profile/{{model.userId}}">
                     <span class="glyphicon glyphicon-chevron-left" id="setwhite"> </span>
                 </a>
 
                 <strong class="navbar-brand " id="setwhite"> Websites </strong>
 
                 <p class="navbar-text pull-right ss-right-glyph-margin">
-                    <a href="/assignment/Websites/website-new.html" class="navbar-link">
+                    <a href="#/user/{{model.userId}}/website/new" class="navbar-link">
                         <span class="glyphicon glyphicon-plus ss-whiteicon">
                         </span>
                     </a>
@@ -27,41 +27,51 @@
     <div class="row">
         <ul class="list-group list-unstyled ss-list-right-padding ss-table-margin">
 
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../pages/page-list.html"> Address Book App
+            <li ng-repeat="website in model.websites" class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
+                <a href="#/user/{{model.userId}}/website/{{website._id}}/page"> {{website.name}}
                 </a>
-                <a href="/assignment/Websites/website-edit.html">
+                <a href="#/user/{{model.userId}}/website/{{website._id}}">
                     <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
                         <span>
                 </a>
             </li>
 
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../pages/page-list.html"> Blogger
-                </a>
-                <a href="/assignment/Websites/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                </a>
-            </li>
 
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../pages/page-list.html"> Blogging App
-                </a>
-                <a href="/assignment/Websites/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                </a>
-            </li>
+            <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                <!--<a href="../pages/page-list.html"> Address Book App-->
+                <!--</a>-->
+                <!--<a href="/assignment/Websites/website-edit.html">-->
+                    <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                        <!--<span>-->
+                <!--</a>-->
+            <!--</li>-->
 
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../pages/page-list.html"> Script Testing App
-                </a>
-                <a href="/assignment/Websites/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                </a>
-            </li>
+            <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                <!--<a href="../pages/page-list.html"> Blogger-->
+                <!--</a>-->
+                <!--<a href="/assignment/Websites/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                <!--</a>-->
+            <!--</li>-->
+
+            <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                <!--<a href="../pages/page-list.html"> Blogging App-->
+                <!--</a>-->
+                <!--<a href="/assignment/Websites/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                <!--</a>-->
+            <!--</li>-->
+
+            <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                <!--<a href="../pages/page-list.html"> Script Testing App-->
+                <!--</a>-->
+                <!--<a href="/assignment/Websites/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                <!--</a>-->
+            <!--</li>-->
 
         </ul>
     </div>
@@ -74,7 +84,7 @@
         <div class="row">
             <div class="navbar-text pull-right ss-right-glyph-margin">
                 <div class="col-xs-3 ">
-                    <a href="/assignment/User/profile.html">
+                    <a href="#/profile/{{model.userId}}">
                         <span class="glyphicon glyphicon-user ss-whiteicon"></span>
                     </a>
                 </div>

@@ -8,7 +8,7 @@
             </a>
             <strong class="navbar-brand" id="setwhite">Pages</strong>
             <p class="navbar-text pull-right ss-right-glyph-margin">
-                <a href="/assignment/Pages/page-new.html" class="navbar-link">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-link">
                         <span class="glyphicon glyphicon-plus ss-whiteicon">
                         </span>
                 </a>
@@ -26,50 +26,60 @@
     <div class="row">
         <ul class="list-group list-unstyled ss-list-right-padding ss-table-margin">
 
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../widgets/widget-list.html"> Blog Post
+            <li ng-repeat="page in model.pages"
+                class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
+                <a href="../widgets/widget-list.html"> {{page.name}}
                 </a>
-                <a href="/assignment/Pages/page-edit.html">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
                     <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
                         <span>
                 </a>
             </li>
 
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../widgets/widget-list.html"> Blogs
-                </a>
-                <a href="/assignment/Pages/page-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                </a>
-            </li>
+            <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                <!--<a href="../widgets/widget-list.html"> Blog Post-->
+                <!--</a>-->
+                <!--<a href="/assignment/Pages/page-edit.html">-->
+                    <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                        <!--<span>-->
+                <!--</a>-->
+            <!--</li>-->
 
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../widgets/widget-list.html"> Home
-                </a>
-                <a href="/assignment/Pages/page-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                </a>
-            </li>
+            <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                <!--<a href="../widgets/widget-list.html"> Blogs-->
+                <!--</a>-->
+                <!--<a href="/assignment/Pages/page-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                <!--</a>-->
+            <!--</li>-->
 
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../widgets/widget-list.html"> About
-                </a>
-                <a href="/assignment/Pages/page-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                </a>
-            </li>
+            <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                <!--<a href="../widgets/widget-list.html"> Home-->
+                <!--</a>-->
+                <!--<a href="/assignment/Pages/page-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                <!--</a>-->
+            <!--</li>-->
 
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../widgets/widget-list.html">Contact Us
-                </a>
-                <a href="/assignment/Pages/page-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                </a>
-            </li>
+            <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                <!--<a href="../widgets/widget-list.html"> About-->
+                <!--</a>-->
+                <!--<a href="/assignment/Pages/page-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                <!--</a>-->
+            <!--</li>-->
+
+            <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                <!--<a href="../widgets/widget-list.html">Contact Us-->
+                <!--</a>-->
+                <!--<a href="/assignment/Pages/page-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                <!--</a>-->
+            <!--</li>-->
 
         </ul>
     </div>

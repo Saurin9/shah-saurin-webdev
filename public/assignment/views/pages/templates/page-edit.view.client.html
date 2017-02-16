@@ -33,7 +33,7 @@
                     </a>
                 </div>
                 <div class="navbar-text pull-right ss-right-glyph-margin">
-                    <a href="/assignment/Pages/page-list.html">
+                    <a ng-click="model.update(model.page)" class="ss-pointer">
                         <span class="glyphicon glyphicon-ok ss-whiteicon"></span>
                     </a>
                 </div>
@@ -56,50 +56,60 @@
         <div class="col-sm-4 hidden-xs ss-customborder">
             <ul class="list-group list-unstyled">
 
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> Blog Post
+                <li ng-repeat="page in model.pages"
+                    class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
+                    <a href="page-list.html"> {{page.name}}
                     </a>
-                    <a href="/assignment/Pages/page-edit.html">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}">
                         <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
                         <span>
                     </a>
                 </li>
 
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> Blogs
-                    </a>
-                    <a href="/assignment/Pages/page-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                    </a>
-                </li>
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> Blog Post-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Pages/page-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                        <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
 
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> Home
-                    </a>
-                    <a href="/assignment/Pages/page-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                    </a>
-                </li>
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> Blogs-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Pages/page-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
 
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> About
-                    </a>
-                    <a href="/assignment/Pages/page-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                    </a>
-                </li>
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> Home-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Pages/page-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
 
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> Contact Us
-                    </a>
-                    <a href="/assignment/Pages/page-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                    </a>
-                </li>
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> About-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Pages/page-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
+
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> Contact Us-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Pages/page-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
 
             </ul>
 
@@ -108,21 +118,32 @@
 
 
         <div class="col-sm-8 ss-right-margin">
+            <div class="alert alert-danger ss-reduced-margin" ng-show="model.error">
+                {{model.error}}
+            </div>
+
+            <div class="alert alert-success ss-reduced-margin" ng-show="model.message">
+                {{model.message}}
+            </div>
+            <br>
             <div>
-                <label for="Name">
-                    Name
+                <label for="PageName">
+                    Page Name
                 </label>
-                <input id="Name" type="text" class="form-control ss-right-margin" placeholder="Page Name"/>
+                <input ng-model="model.page.name"
+                       id="PageName" type="text" class="form-control ss-right-margin" placeholder="Page Name"/>
             </div>
             <div>
-                <label for="Title">
-                    Title
+                <label for="PageDescription">
+                    Page Description
                 </label>
-                <input id="Title" type="text" class="form-control ss-right-margin" placeholder="Page Title"/>
+                <input ng-model="model.page.description"
+                       id="PageDescription" type="text" class="form-control ss-right-margin" placeholder="Page Description"/>
             </div>
             <div class="ss-button-padding">
-                <a class="btn btn-danger btn-block form-control"
-                   href="/assignment/Pages/page-list.html">Delete</a>
+                <a ng-click="model.deletePage()"
+                   class="btn btn-danger btn-block form-control">Delete</a>
+
             </div>
         </div>
     </div>

@@ -56,41 +56,51 @@
                 <div class="col-sm-4 hidden-xs ss-customborder">
                     <ul class="list-group list-unstyled">
 
-                        <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                            <a href="../pages/page-list.html"> Address Book App
+                        <li ng-repeat="website in model.websites"
+                            class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
+                            <a href="../pages/page-list.html"> {{website.name}}
                             </a>
-                            <a href="/assignment/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                        <span>
+                            <a href="#/user/{{model.userId}}/website/{{website._id}}">
+                                <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
+                                 <span>
                             </a>
                         </li>
+                        <!---->
+                        <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                            <!--<a href="../pages/page-list.html"> Address Book App-->
+                            <!--</a>-->
+                            <!--<a href="/assignment/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                        <!--<span>-->
+                            <!--</a>-->
+                        <!--</li>-->
 
-                        <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                            <a href="../pages/page-list.html"> Blogger
-                            </a>
-                            <a href="/assignment/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                            </a>
-                        </li>
+                        <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                            <!--<a href="../pages/page-list.html"> Blogger-->
+                            <!--</a>-->
+                            <!--<a href="/assignment/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                            <!--</a>-->
+                        <!--</li>-->
 
-                        <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                            <a href="../pages/page-list.html"> Blogging App
-                            </a>
-                            <a href="/assignment/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                            </a>
-                        </li>
+                        <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                            <!--<a href="../pages/page-list.html"> Blogging App-->
+                            <!--</a>-->
+                            <!--<a href="/assignment/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                            <!--</a>-->
+                        <!--</li>-->
 
-                        <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                            <a href="../pages/page-list.html"> Script Testing App
-                            </a>
-                            <a href="/assignment/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                            </a>
-                        </li>
+                        <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                            <!--<a href="../pages/page-list.html"> Script Testing App-->
+                            <!--</a>-->
+                            <!--<a href="/assignment/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                            <!--</a>-->
+                        <!--</li>-->
 
                     </ul>
 
@@ -103,15 +113,28 @@
                         <label for="Name">
                             Name
                         </label>
-                        <input id="Name" type="text" class="form-control ss-right-margin" placeholder="Name"/>
+                        <input ng-model="website.name"
+                               id="Name" type="text"
+                               class="form-control ss-right-margin"
+                               placeholder="Name"/>
                     </div>
                     <div>
                         <label for="Description">
                             Description
                         </label>
-                        <textarea id="Description" type="text" rows="5" class="form-control ss-right-margin" placeholder="Description"></textarea>
+                        <textarea ng-model="website.description"
+                                  id="Description" type="text" rows="5"
+                                  class="form-control ss-right-margin"
+                                  placeholder="Description"></textarea>
                     </div>
+
+                    <div class="ss-top-padding">
+                        <a ng-click="model.createWebsite(website)"
+                           class="btn btn-success btn-block ">Create</a>
+                    </div>
+
                 </div>
+
             </div>
     </div>
 

@@ -16,13 +16,16 @@
 
 
         var api = {
-
-            "findAllWebsitesForUser": findAllWebsitesForUser
-
+            "findWebsitesByUser": findWebsitesByUser,
+            "createWebsite": createWebsite,
+            "deleteWebsite": deleteWebsite,
+            "findWebsiteById": findWebsiteById,
+            "updateWebsite": updateWebsite
         };
         return api;
 
-        function findAllWebsitesForUser(userId) {
+
+        function findWebsitesByUser(userId) {
             var sites = [];
             for (var w in websites){
                 if(websites[w].developerId === userId){
@@ -30,9 +33,46 @@
                 }
             }
             return sites;
+        }
+
+        function createWebsite(userId, website) {
+            var website_new = {_id: (new Date()).getTime().toString(),
+                name: website.name,
+                developerId: userId,
+                description: website.description};
+            websites.push(website_new);
 
         }
-        
+
+        function deleteWebsite(websiteId) {
+            for (var w in websites){
+                if(websites[w]._id === websiteId){
+                    websites.splice(w, 1);
+                }
+            }
+        }
+
+        function findWebsiteById(wid) {
+            for (var w in websites){
+                if(websites[w]._id === wid){
+                    return angular.copy(websites[w]);
+                }
+            }
+            return null;
+        }
+
+        function updateWebsite(websiteId, website) {
+            for(var w in websites){
+                var web = websites[w];
+                if(web._id === websiteId ) {
+                    websites[w].name = website.name;
+                    websites[w].description = website.description;
+                    return website;
+                }
+            }
+            return null;
+
+        }
     }
     
 })();

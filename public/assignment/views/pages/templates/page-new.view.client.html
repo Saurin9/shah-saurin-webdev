@@ -56,17 +56,9 @@
         <div class="col-sm-4 hidden-xs ss-customborder">
             <ul class="list-group list-unstyled">
 
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> Blog Post
-                    </a>
-                    <a href="/assignment/Websites/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                        <span>
-                    </a>
-                </li>
-
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> Blogs
+                <li ng-repeat="page in model.pages"
+                    class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
+                    <a href="page-list.html"> {{page.name}}
                     </a>
                     <a href="/assignment/Websites/website-edit.html">
                         <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
@@ -74,32 +66,50 @@
                     </a>
                 </li>
 
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> Home
-                    </a>
-                    <a href="/assignment/Websites/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                    </a>
-                </li>
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> Blog Post-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Websites/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                        <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
 
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> About
-                    </a>
-                    <a href="/assignment/Websites/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                    </a>
-                </li>
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> Blogs-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Websites/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
 
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> Contact Us
-                    </a>
-                    <a href="/assignment/Websites/website-edit.html">
-                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
-                            <span>
-                    </a>
-                </li>
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> Home-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Websites/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
+
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> About-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Websites/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
+
+                <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
+                    <!--<a href="page-list.html"> Contact Us-->
+                    <!--</a>-->
+                    <!--<a href="/assignment/Websites/website-edit.html">-->
+                        <!--<span class="glyphicon glyphicon-cog pull-right ss-bluecolor">-->
+                            <!--<span>-->
+                    <!--</a>-->
+                <!--</li>-->
 
             </ul>
 
@@ -109,16 +119,25 @@
 
         <div class="col-sm-8 ss-right-margin">
             <div>
-                <label for="Name">
-                    Name
+                <label for="PageName">
+                    Page Name
                 </label>
-                <input id="Name" type="text" class="form-control ss-right-margin" placeholder="Page Name"/>
+                <input ng-model="page.name"
+                       id="PageName" type="text"
+                       class="form-control ss-right-margin" placeholder="Page Name"/>
             </div>
             <div>
-                <label for="Title">
-                    Title
+                <label for="PageDescription">
+                    Page Description
                 </label>
-                <input id="Title" type="text" class="form-control ss-right-margin" placeholder="Page Title"/>
+                <input ng-model="page.description"
+                       id="PageDescription" type="text" class="form-control ss-right-margin"
+                       placeholder="Page Description"/>
+            </div>
+
+            <div class="ss-top-padding">
+                <a ng-click="model.createPage(page)"
+                   class="btn btn-success btn-block ">Create</a>
             </div>
         </div>
     </div>

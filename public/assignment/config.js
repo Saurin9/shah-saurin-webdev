@@ -32,36 +32,43 @@
             })
             .when("/user/:uid/website/new", {
                 templateUrl: "views/websites/templates/website-new.view.client.html",
-                controller: "WebsiteListController",
+                controller: "WebsiteNewController",
                 controllerAs: "model"
             })
+
+            // **IMP**: The below controller needs to be declared after the one above as the one below is very broad
+            // due to its link having '....:wid'. So it the page '..../new' qill never get loaded as pattern matches
+            // with ':wid' always. So we declare the '../new' first, so in case it doesn't match with it then only
+            // '...:wid' page gets loaded.
             .when("/user/:uid/website/:wid", {
                 templateUrl: "views/websites/templates/website-edit.view.client.html",
                 controller: "WebsiteEditController",
                 controllerAs: "model"
             })
+
+            // Page Routes:
             .when("/user/:uid/website/:wid/page", {
-                templateUrl: "views/websites/templates/page-list.view.client.html",
-                controller: "WebsiteEditController",
+                templateUrl: "views/pages/templates/page-list.view.client.html",
+                controller: "PageListController",
                 controllerAs: "model"
             })
             .when("/user/:uid/website/:wid/page/new", {
-                templateUrl: "views/websites/templates/page-new.view.client.html",
-                controller: "WebsiteEditController",
+                templateUrl: "views/pages/templates/page-new.view.client.html",
+                controller: "PageNewController",
                 controllerAs: "model"
             })
             .when("/user/:uid/website/:wid/page/:pid", {
-                templateUrl: "views/websites/templates/page-edit.view.client.html",
-                controller: "WebsiteEditController",
+                templateUrl: "views/pages/templates/page-edit.view.client.html",
+                controller: "PageEditController",
                 controllerAs: "model"
             })
 
             // Widget Routes
-            // .when("/user/:uid/website/:wid/page/:pid/widget", {
-            //     templateUrl: "views/widgets/templates/widget-list.view.client.html",
-            //     // controller: "WidgetListController",
-            //     // controllerAs: "model"
-            // })
+            .when("/user/:uid/website/:wid/page/:pid/widget", {
+                templateUrl: "views/widgets/templates/widget-list.view.client.html",
+                controller: "WidgetListController",
+                controllerAs: "model"
+            })
             // .when("/user/:uid/website/:wid/page/:pid/widget", {
             //     templateUrl: "views/widgets/templates/widget-chooser.view.client.html",
             //     // controller: "WidgetListController",

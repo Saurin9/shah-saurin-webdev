@@ -106,3 +106,7 @@ a:hover {
 .ss-reduced-margin{
     margin-bottom: 0px;
 }
+
+.ss-pointer{
+    cursor: pointer;
+}
