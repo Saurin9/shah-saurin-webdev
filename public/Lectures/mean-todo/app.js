@@ -1,7 +1,8 @@
-console.log("Hello");          // Prints the argument, here the angular object to the console (in 'Inspect elemment' of page)
+console.log("Hello");          // Prints the argument, here the angular object to the console (in 'Inspect element' of page)
 angular
     .module("TodoApp", [])   // If there are dependencies for this module, list them as an array in brackets []
-    .controller("TodoController", TodoController) //means 'TodoController is implemented in a function named 'TodoController'; need not be the same names
+    .controller("TodoController", TodoController) //means 'TodoController is implemented in a function named 'TodoController';
+                                                    // need not be the same names
 
 function TodoController($scope) {         // Constructor of 'TodoController'
     console.log('Hello from Todo Controller')

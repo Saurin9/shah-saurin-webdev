@@ -1,0 +1,30 @@
+
+    <div class="container">
+        <h1>Login</h1>
+
+        <div ng-show="model.error" class="alert alert-danger" role="alert">
+            {{model.error}}
+        </div>
+                                                                     <!--// 'ng-show' check that if the value of 'model.error'-->
+                                                                    <!--// is true (not null, false) then only do the task,-->
+                                                                    <!--// of showing the error box)-->
+
+        <input ng-model="user.username"
+               type="text"
+               class="form-control"
+               placeholder="username"/>
+
+        <input ng-model="user.password"
+               type="password"
+               class="form-control"
+               placeholder="password"/>
+
+        <a class="btn btn-primary btn-block"
+           ng-click="model.login(user)">
+            Login
+        </a>
+
+        <a class="btn btn-success btn-block"
+           href="#/register">Register
+        </a>
+    </div>

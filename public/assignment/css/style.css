@@ -102,3 +102,7 @@ a:hover {
 .glyph-size {
     font-size: 50px;
 }
+
+.ss-reduced-margin{
+    margin-bottom: 0px;
+}

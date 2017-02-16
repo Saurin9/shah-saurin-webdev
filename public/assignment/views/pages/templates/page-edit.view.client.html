@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Widget-Heading</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../css/style.css" rel="stylesheet"/>
-</head>
-
-<body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid bg-primary">
@@ -17,32 +6,41 @@
 
             <div class="col-sm-4">
                 <div class="navbar-brand pull-left hidden-xs">
-                    <a href="/assignment/Widgets/widget-list.html">
+                    <a href="/assignment/Pages/page-list.html">
                         <span class="glyphicon glyphicon-chevron-left" id="setwhite"> </span>
                     </a>
                 </div>
 
+                <div class="navbar-text pull-right hidden-xs">
+                    <p>
+                        <a href="/assignment/Pages/page-new.html" class="navbar-link pull-right">
+                                <span class="glyphicon glyphicon-plus ss-whiteicon">
+                                </span>
+                        </a>
+                    </p>
+                </div>
+
                 <div class="navbar-brand navbar-header hidden-xs" id="setwhite">
-                    <a id="setwhite"> Choose Widget
+                    <a id="setwhite"> Pages
                     </a>
                 </div>
             </div>
 
             <div class="navbar-header col-sm-8">
                 <div class="navbar-brand pull-left visible-xs">
-                    <a href="/assignment/Widgets/widget-list.html">
+                    <a href="/assignment/Pages/page-list.html">
                         <span class="glyphicon glyphicon-chevron-left" id="setwhite"> </span>
                     </a>
                 </div>
                 <div class="navbar-text pull-right ss-right-glyph-margin">
-                    <a href="/assignment/Widgets/widget-list.html">
+                    <a href="/assignment/Pages/page-list.html">
                         <span class="glyphicon glyphicon-ok ss-whiteicon"></span>
                     </a>
                 </div>
                 <div class="navbar-header ss-whiteicon">
                     <!--<a class="navbar-brand no-left-padding no-left-margin">-->
                     <a class="navbar-brand">
-                        <span class="ss-whiteicon"> Widget Edit </span>
+                        <span class="ss-whiteicon"> Edit Page </span>
                     </a>
                 </div>
 
@@ -56,55 +54,50 @@
     <div class="row">
 
         <div class="col-sm-4 hidden-xs ss-customborder">
-            <ul class="list-group list-unstyled ss-list-right-padding ss-table-margin">
+            <ul class="list-group list-unstyled">
 
                 <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="/assignment/Widgets/widget-heading.html"> Header
+                    <a href="page-list.html"> Blog Post
+                    </a>
+                    <a href="/assignment/Pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
+                        <span>
                     </a>
                 </li>
 
                 <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="#"> Label
+                    <a href="page-list.html"> Blogs
+                    </a>
+                    <a href="/assignment/Pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
+                            <span>
                     </a>
                 </li>
 
                 <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="#"> HTML
+                    <a href="page-list.html"> Home
+                    </a>
+                    <a href="/assignment/Pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
+                            <span>
                     </a>
                 </li>
 
                 <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="#"> Text Input
+                    <a href="page-list.html"> About
+                    </a>
+                    <a href="/assignment/Pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
+                            <span>
                     </a>
                 </li>
 
                 <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="#"> Link
+                    <a href="page-list.html"> Contact Us
                     </a>
-                </li>
-
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="#"> Button
-                    </a>
-                </li>
-
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="Widgets/widget-image.html"> Image
-                    </a>
-                </li>
-
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="Widgets/widget-youtube.html"> Youtube
-                    </a>
-                </li>
-
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="#"> Data Table
-                    </a>
-                </li>
-
-                <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="#"> Repeater
+                    <a href="/assignment/Pages/page-edit.html">
+                        <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
+                            <span>
                     </a>
                 </li>
 
@@ -115,35 +108,21 @@
 
 
         <div class="col-sm-8 ss-right-margin">
-            <div class="form-group">
+            <div>
                 <label for="Name">
                     Name
                 </label>
-                <input id="Name" type="text" class="form-control ss-right-margin" placeholder="Name"/>
+                <input id="Name" type="text" class="form-control ss-right-margin" placeholder="Page Name"/>
             </div>
-            <div class="form-group">
-                <label for="Text">
-                    Text
+            <div>
+                <label for="Title">
+                    Title
                 </label>
-                <input id="Text" type="text" class="form-control ss-right-margin" placeholder="Text"></input>
+                <input id="Title" type="text" class="form-control ss-right-margin" placeholder="Page Title"/>
             </div>
-            <div class="form-group">
-                <label for="Size">
-                    Size
-                </label>
-                <select class="form-control" id="Size">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                </select>
-
-            </div>
-            <div class="ss-button-padding class=" form-group"">
+            <div class="ss-button-padding">
                 <a class="btn btn-danger btn-block form-control"
-                   href="/assignment/Widgets/widget-list.html">Delete</a>
+                   href="/assignment/Pages/page-list.html">Delete</a>
             </div>
         </div>
     </div>
@@ -162,6 +141,3 @@
         </div>
     </div>
 </nav>
-
-</body>
-</html>
