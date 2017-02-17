@@ -4,7 +4,7 @@
         .module("WebAppMaker")
         .controller("WidgetNewController", WidgetNewController);
 
-    function WidgetNewController($sce, $routeParams, WidgetService) {
+    function WidgetNewController($location, $routeParams, WidgetService) {
         var vm = this;
         vm.userId = $routeParams['uid'];
         vm.websiteId = $routeParams['wid'];
@@ -22,12 +22,20 @@
         init();
 
         function getEditorTemplateUrl(type) {
-            return 'views/widgets/templates/new/widget-'+ type + '-new.view.client.html';
+            return 'views/widgets/templates/new/widget-'+ vm.widgetType + '-new.view.client.html';
         }
 
         function createWidget (widget) {
+            WidgetService.createWidget(vm.pageId,widget);
+            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
 
         }
+
+        // function createWebsite(website) {
+        //     WebsiteService.createWebsite(vm.userId, website);
+        //     // vm.websites = WebsiteService.findAllWebsitesForUser(vm.userId);
+        //     $location.url("/user/" + vm.userId + "/website");
+        // };
 
 
 

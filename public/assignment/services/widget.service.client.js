@@ -50,12 +50,51 @@
         
         
         function createWidget(new_pageId, widget) {
-            var widget_new = {_id: (new Date()).getTime().toString(),
-                widgetType: widget.widgetType,
-                pageId: new_pageId,
-                size: widget.size,
-                text: widget.text};
+            // var widget_new = {_id: (new Date()).getTime().toString(),
+            //     widgetType: widget.widgetType,
+            //     pageId: new_pageId,
+            //     size: widget.size,
+            //     text: widget.text};
+            // widgets.push(widget_new);
+            console.log(widget);
+                if(widget.widgetType === "HEADER") {
+                    var widget_new = {
+                        _id: (new Date()).getTime().toString(),
+                        widgetType: "HEADER",
+                        pageId: new_pageId,
+                        size: widget.size,
+                        text : widget.text};
+                    // return angular.copy(widgetToUpdate);
+                }
+                else if(widget.widgetType === "HTML") {
+                    var widget_new = {
+                        _id: (new Date()).getTime().toString(),
+                        widgetType: "HTML",
+                        pageId: new_pageId,
+                        text: widget.text};
+                    //return angular.copy(widgetToUpdate);
+                }
+                else if(widget.widgetType === "IMAGE") {
+                    var widget_new = {
+                        _id: (new Date()).getTime().toString(),
+                        widgetType: "IMAGE",
+                        pageId: new_pageId,
+                        width: widget.width,
+                        url: widget.url
+                    };
+                    //return angular.copy(widgetToUpdate);
+                }
+                else{
+                    var widget_new = {
+                        _id: (new Date()).getTime().toString(),
+                        widgetType: "YOUTUBE",
+                        pageId: new_pageId,
+                        width: widget.width,
+                        url: widget.url
+                    };
+                }
             widgets.push(widget_new);
+
         }
         
 
@@ -92,7 +131,6 @@
         }
 
         
-
 
     }
 
