@@ -42,7 +42,7 @@
 
 <!--<div class="container-fluid">-->
 
-    <div class="row ss-bg-color">
+    <div class="row">
 
         <!--<div class="col-sm-4 hidden-xs ss-customborder">-->
             <!--<ul class="list-group list-unstyled ss-list-right-padding ss-table-margin">-->
@@ -104,7 +104,7 @@
 
 
         <div class="col-sm-12 ss-right-margin">
-            <h3>YOUTUBE VIDEO Editor</h3>
+            <h3> NEW HEADER</h3>
             <div class="form-group">
                 <label for="Name">
                     Name
@@ -116,31 +116,25 @@
                     Text
                 </label>
                 <input ng-model="model.widget.text"
-                        id="Text" type="text" class="form-control ss-right-margin" placeholder="Text">
+                       id="Text" type="text" class="form-control ss-right-margin" placeholder="Text">
             </div>
             <div class="form-group">
-                <label for="URL">
-                    URL
+                <label for="Size">
+                    Size
                 </label>
-                <input ng-model="model.widget.url"
-                        id="URL" type="url" class="form-control ss-right-margin" placeholder="www.video.com/video.mp4">
-            </div>
-            <div class="form-group">
-                <label for="Width">
-                    Width
-                </label>
-                <select ng-model="model.widget.width" class="form-control" id="Width">
-                    <option>20%</option>
-                    <option>40%</option>
-                    <option>60%</option>
-                    <option>80%</option>
-                    <option>100%</option>
+                <select ng-model="model.widget.size" class="form-control" id="Size">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
                 </select>
-            </div>
 
+            </div>
             <div class="ss-button-padding form-group">
-            <a class="btn btn-danger btn-block form-control"
-               ng-click="model.deleteWidget()">Delete</a>
+                <a class="btn btn-danger btn-block form-control"
+                   ng-click="model.createWidget(model.widget)">Create</a>
             </div>
         </div>
     </div>
@@ -159,3 +153,4 @@
         <!--</div>-->
     <!--</div>-->
 <!--</nav>-->
+

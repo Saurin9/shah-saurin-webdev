@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("WidgetEditController", WidgetEditController);
 
-    function WidgetEditController($routeParams, WidgetService) {
+    function WidgetEditController($routeParams, WidgetService, $location) {
         var vm = this;
         vm.userId = $routeParams['uid'];
         vm.websiteId = $routeParams['wid'];
@@ -11,6 +11,8 @@
         vm.widgetId = $routeParams['wgid'];
         
         vm.getEditorTemplateUrl = getEditorTemplateUrl;
+        vm.update = update;
+        vm.deleteWidget = deleteWidget;
 
         function init() {
             vm.widget = WidgetService.findWidgetById(vm.widgetId);
@@ -20,6 +22,21 @@
 
         function getEditorTemplateUrl(type) {
             return 'views/widgets/templates/editors/widget-'+type+'-editor.view.client.html';
+        }
+
+        function update(editedWidget) {
+            var widget = WidgetService.updateWidget(vm.widgetId, editedWidget);
+            if(widget==null){
+                vm.error = "Unable to update website !";
+            }
+            else{
+                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/");
+            }
+        }
+
+        function deleteWidget() {
+            WidgetService.deleteWidget(vm.widgetId);
+            $location.url("/user/" + vm.userId + "/website/" + vm.website + "/page/" + vm.pageId + "/widget/");
         }
 
 

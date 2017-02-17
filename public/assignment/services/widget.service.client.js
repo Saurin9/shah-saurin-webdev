@@ -58,12 +58,37 @@
             widgets.push(widget_new);
         }
         
-        function updateWidget(widgetId, widget) {
 
+        function updateWidget(widgetId, widget) {
+            for(var w in widgets) {
+                var widgetToUpdate = widgets[w];
+                if (widgetToUpdate._id === widgetId) {
+                    if(widgetToUpdate.widgetType === "HEADER") {
+                        widgetToUpdate.size = widget.size;
+                        widgetToUpdate.text = widget.text;
+                        return angular.copy(widgetToUpdate);
+                    } else if(widgetToUpdate.widgetType === "HTML") {
+                        widgetToUpdate.text = widget.text;
+                        return angular.copy(widgetToUpdate);
+                    } else {
+                        widgetToUpdate.width = widget.width;
+                        widgetToUpdate.url = widget.url;
+                        return angular.copy(widgetToUpdate);
+                    }
+                }
+            }
+            return null;
         }
 
         function deleteWidget(widgetId) {
-
+            for(var w in widgets) {
+                var widgetToDelete = widgets[w];
+                if (widgetToDelete._id === widgetId) {
+                    widgets.splice(w,1);
+                    return angular.copy(widgetToDelete);
+                }
+            }
+            return null;
         }
 
         

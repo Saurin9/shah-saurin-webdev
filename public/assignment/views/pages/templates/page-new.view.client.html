@@ -6,14 +6,14 @@
 
             <div class="col-sm-4">
                 <div class="navbar-brand pull-left hidden-xs">
-                    <a href="/assignment/Pages/page-list.html">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                         <span class="glyphicon glyphicon-chevron-left" id="setwhite"> </span>
                     </a>
                 </div>
 
                 <div class="navbar-text pull-right hidden-xs">
                     <p>
-                        <a href="/assignment/Websites/website-new.html" class="navbar-link pull-right">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-link pull-right">
                                 <span class="glyphicon glyphicon-plus ss-whiteicon">
                                 </span>
                         </a>
@@ -28,12 +28,12 @@
 
             <div class="navbar-header col-sm-8">
                 <div class="navbar-brand pull-left visibble-xs">
-                    <a href="/assignment/Pages/page-list.html">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                         <span class="glyphicon glyphicon-chevron-left" id="setwhite"> </span>
                     </a>
                 </div>
                 <div class="navbar-text pull-right ss-right-glyph-margin">
-                    <a href="/assignment/Pages/page-list.html">
+                    <a ng-click="model.createPage(page)">
                         <span class="glyphicon glyphicon-ok ss-whiteicon"></span>
                     </a>
                 </div>
@@ -58,9 +58,9 @@
 
                 <li ng-repeat="page in model.pages"
                     class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                    <a href="page-list.html"> {{page.name}}
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget"> {{page.name}}
                     </a>
-                    <a href="/assignment/Websites/website-edit.html">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}">
                         <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">
                             <span>
                     </a>
@@ -148,7 +148,7 @@
         <div class="row">
             <div class="navbar-text pull-right ss-right-glyph-margin">
                 <div class="col-xs-3">
-                    <a href="/assignment/User/profile.html">
+                    <a href="#/profile/{{model.userId}}">
                         <span class="glyphicon glyphicon-user ss-whiteicon"></span>
                     </a>
                 </div>

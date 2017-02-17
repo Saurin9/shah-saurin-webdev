@@ -21,52 +21,22 @@
         <ul class="list-group list-unstyled ss-list-right-padding ss-table-margin">
 
             <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="/assignment/Widgets/widget-heading.html"> Header
+                <a ng-click="model.goToNewWidget('HEADER')"> Header
                 </a>
             </li>
 
             <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="#"> Label
+                <a ng-click="model.goToNewWidget('HTML')"> HTML
                 </a>
             </li>
 
             <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="#"> HTML
+                <a ng-click="model.goToNewWidget('IMAGE')"> Image
                 </a>
             </li>
 
             <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="#"> Text Input
-                </a>
-            </li>
-
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="#"> Link
-                </a>
-            </li>
-
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="#"> Button
-                </a>
-            </li>
-
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="/assignment/Widgets/widget-image.html"> Image
-                </a>
-            </li>
-
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="/assignment/Widgets/widget-youtube.html"> Youtube
-                </a>
-            </li>
-
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="#"> Data Table
-                </a>
-            </li>
-
-            <li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="#"> Repeater
+                <a ng-click="model.goToNewWidget('YOUTUBE')"> Youtube
                 </a>
             </li>
 
@@ -80,7 +50,7 @@
         <div class="row">
             <div class="navbar-text pull-right ss-right-glyph-margin">
                 <div class="col-xs-3">
-                    <a href="/assignment/User/profile.html">
+                    <a href="#/profile/{{model.userId}}">
                         <span class="glyphicon glyphicon-user ss-whiteicon"></span>
                     </a>
                 </div>

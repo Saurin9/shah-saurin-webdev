@@ -42,7 +42,7 @@
 
 <!--<div class="container-fluid">-->
 
-    <div class="row ss-bg-color">
+    <div class="row">
 
         <!--<div class="col-sm-4 hidden-xs ss-customborder">-->
             <!--<ul class="list-group list-unstyled ss-list-right-padding ss-table-margin">-->
@@ -78,12 +78,12 @@
                 <!--</li>-->
 
                 <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
-                    <!--<a href="Widgets/widget-image.html"> Image-->
+                    <!--<a href="./Widgets/widget-image.html"> Image-->
                     <!--</a>-->
                 <!--</li>-->
 
                 <!--<li class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">-->
-                    <!--<a href="Widgets/widget-youtube.html"> Youtube-->
+                    <!--<a href="./Widgets/widget-youtube.html"> Youtube-->
                     <!--</a>-->
                 <!--</li>-->
 
@@ -104,7 +104,7 @@
 
 
         <div class="col-sm-12 ss-right-margin">
-            <h3>YOUTUBE VIDEO Editor</h3>
+            <h3>NEW IMAGE</h3>
             <div class="form-group">
                 <label for="Name">
                     Name
@@ -116,14 +116,14 @@
                     Text
                 </label>
                 <input ng-model="model.widget.text"
-                        id="Text" type="text" class="form-control ss-right-margin" placeholder="Text">
+                       id="Text" type="text" class="form-control ss-right-margin" placeholder="Text">
             </div>
             <div class="form-group">
                 <label for="URL">
                     URL
                 </label>
                 <input ng-model="model.widget.url"
-                        id="URL" type="url" class="form-control ss-right-margin" placeholder="www.video.com/video.mp4">
+                       id="URL" type="url" class="form-control ss-right-margin" placeholder="www.image.com/image.jpg">
             </div>
             <div class="form-group">
                 <label for="Width">
@@ -137,10 +137,19 @@
                     <option>100%</option>
                 </select>
             </div>
-
-            <div class="ss-button-padding form-group">
+            <div class="form-group">
+                <label for="Upload">
+                    Upload
+                </label>
+                <input id="Upload" type="file" class="form-control ss-right-margin" placeholder="wwww.image.com/image.jpg"></input>
+            </div>
+            <div class="ss-button-padding class=" form-group"">
+            <a class="btn btn-primary btn-block form-control"
+               href="#">Upload</a>
+            </div>
+            <div class="ss-button-padding class=" form-group"">
             <a class="btn btn-danger btn-block form-control"
-               ng-click="model.deleteWidget()">Delete</a>
+               href="/assignment/Widgets/widget-list.html">Create</a>
             </div>
         </div>
     </div>
