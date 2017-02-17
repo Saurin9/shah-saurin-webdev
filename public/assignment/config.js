@@ -7,6 +7,11 @@
         $routeProvider
 
             // User Routes
+            .when("/", {
+                templateUrl: "views/user/templates/login.view.client.html",
+                controller: "loginController",
+                controllerAs: "model"
+            })
             .when("/login", {
                 templateUrl: "views/user/templates/login.view.client.html",
                 controller: "loginController",
