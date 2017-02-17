@@ -28,7 +28,7 @@
 
             <li ng-repeat="page in model.pages"
                 class="list-group-item ss-bluecolor ss-bigfont ss-bg-color">
-                <a href="../widgets/widget-list.html"> {{page.name}}
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget"> {{page.name}}
                 </a>
                 <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
                     <span class="glyphicon glyphicon-cog pull-right ss-bluecolor">

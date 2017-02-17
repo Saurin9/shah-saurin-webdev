@@ -8,7 +8,8 @@
                 </a>
                 <strong class="navbar-brand" id="setwhite"> Widgets </strong>
                 <p class="navbar-text pull-right ss-right-glyph-margin">
-                    <a href="/assignment/Widgets/widget-chooser.html" class="navbar-link pull-right">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new"
+                       class="navbar-link pull-right">
                         <span class="glyphicon glyphicon-plus ss-whiteicon">
                         </span>
                     </a>
@@ -19,52 +20,86 @@
 </nav>
 
 <div class="container-fluid">
-
-    <div>
+    <div ng-repeat="widget in model.widgets">
         <div class="ss-toolbar pull-right">
-            <a href="/widget-heading.html">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
             <span class="glyphicon glyphicon-align-justify"></span>
         </div>
-        <h1>Techiezz</h1>
-    </div>
 
-    <div>
-        <h3>Experts Warn Against Existential Risks of AI; Scientists Recommend ‘Kill Switch’ To Prevent AI from Rising Up Against Humans</h3>
-    </div>
+        <!--Either write this one line OR write the whole '<ng-switch>....</ng-switch>' as written below, any ONE-->
+        <!--<ng-include src="model.getWidgetTemplateUrl(widget.widgetType)"></ng-include>-->
 
-    <div>
-        <div class="ss-toolbar pull-right">
-            <a href="/widget-image.html">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-            <span class="glyphicon glyphicon-align-justify"></span>
+        <div ng-switch="widget.widgetType">
+            <div ng-switch-when="HEADER">
+                <!--**IMP** Below here the '' inside "" tell that the given is not a -->
+                <!--string but a literal so take as it is-->
+                <ng-include src="'views/widgets/templates/widget-HEADER.view.client.html'"></ng-include>
+            </div>
+
+            <div ng-switch-when="IMAGE">
+                <ng-include src="'views/widgets/templates/widget-IMAGE.view.client.html'"></ng-include>
+            </div>
+
+            <div ng-switch-when="HTML">
+                <ng-include src="'views/widgets/templates/widget-HTML.view.client.html'"></ng-include>
+            </div>
+
+            <div ng-switch-when="YOUTUBE">
+                <ng-include src="'views/widgets/templates/widget-YOUTUBE.view.client.html'"></ng-include>
+            </div>
+
         </div>
-        <img width="100%" src="http://wallpaper-gallery.net/images/best-pic/best-pic-20.jpg">
     </div>
     <br>
-    <div>
-        <div class="ss-toolbar pull-right">
-            <a>
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-            <span class="glyphicon glyphicon-align-justify"></span>
-        </div>
-        <p> Autonomous systems -- like driverless cars -- perform tasks that previously could only be performed by humans.  <a href="https://www.sciencedaily.com/releases/2017/01/170126124115.htm" target="_blank" rel="noopener"> In a new article </a>, artificial intelligence ethics experts argue that current safety regulations do not plan for these systems and are therefore ill-equipped to ensure that autonomous systems will perform safely and reliably.
-        </p>
-    </div>
     <br>
+    <!--<br>-->
+    <!--<div>-->
+        <!--<div class="ss-toolbar pull-right">-->
+            <!--<a href="/widget-heading.html">-->
+                <!--<span class="glyphicon glyphicon-cog"></span>-->
+            <!--</a>-->
+            <!--<span class="glyphicon glyphicon-align-justify"></span>-->
+        <!--</div>-->
+        <!--<h1>Techiezz</h1>-->
+    <!--</div>-->
 
-    <div>
-        <div class="ss-toolbar pull-right">
-            <a href="/widget-youtube.html">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-            <span class="glyphicon glyphicon-align-justify"></span>
-        </div>
-        <iframe width="100%" src="https://www.youtube.com/embed/6v2L2UGZJAM" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <!--<div>-->
+        <!--<h3>Experts Warn Against Existential Risks of AI; Scientists Recommend ‘Kill Switch’ To Prevent AI from Rising Up Against Humans</h3>-->
+    <!--</div>-->
+
+    <!--<div>-->
+        <!--<div class="ss-toolbar pull-right">-->
+            <!--<a href="/widget-image.html">-->
+                <!--<span class="glyphicon glyphicon-cog"></span>-->
+            <!--</a>-->
+            <!--<span class="glyphicon glyphicon-align-justify"></span>-->
+        <!--</div>-->
+        <!--<img width="100%" src="http://wallpaper-gallery.net/images/best-pic/best-pic-20.jpg">-->
+    <!--</div>-->
+    <!--<br>-->
+    <!--<div>-->
+        <!--<div class="ss-toolbar pull-right">-->
+            <!--<a>-->
+                <!--<span class="glyphicon glyphicon-cog"></span>-->
+            <!--</a>-->
+            <!--<span class="glyphicon glyphicon-align-justify"></span>-->
+        <!--</div>-->
+        <!--<p> Autonomous systems &#45;&#45; like driverless cars &#45;&#45; perform tasks that previously could only be performed by humans.  <a href="https://www.sciencedaily.com/releases/2017/01/170126124115.htm" target="_blank" rel="noopener"> In a new article </a>, artificial intelligence ethics experts argue that current safety regulations do not plan for these systems and are therefore ill-equipped to ensure that autonomous systems will perform safely and reliably.-->
+        <!--</p>-->
+    <!--</div>-->
+    <!--<br>-->
+
+    <!--<div>-->
+        <!--<div class="ss-toolbar pull-right">-->
+            <!--<a href="/widget-youtube.html">-->
+                <!--<span class="glyphicon glyphicon-cog"></span>-->
+            <!--</a>-->
+            <!--<span class="glyphicon glyphicon-align-justify"></span>-->
+        <!--</div>-->
+        <!--<iframe width="100%" src="https://www.youtube.com/embed/6v2L2UGZJAM" frameborder="0" allowfullscreen></iframe>-->
+    <!--</div>-->
 
 </div>
 

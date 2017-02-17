@@ -69,16 +69,16 @@
                 controller: "WidgetListController",
                 controllerAs: "model"
             })
-            // .when("/user/:uid/website/:wid/page/:pid/widget", {
-            //     templateUrl: "views/widgets/templates/widget-chooser.view.client.html",
-            //     // controller: "WidgetListController",
-            //     // controllerAs: "model"
-            // })
-            // .when("/user/:uid/website/:wid/page/:pid/widget", {
-            //     templateUrl: "views/widgets/templates/widget-edit.view.client.html",
-            //     // controller: "WidgetListController",
-            //     // controllerAs: "model"
-            // })
+            .when("/user/:uid/website/:wid/page/:pid/widget/new", {
+                templateUrl: "views/widgets/templates/widget-chooser.view.client.html",
+                controller: "WidgetChooserController",
+                controllerAs: "model"
+            })
+            .when("/user/:uid/website/:wid/page/:pid/widget/:wgid", {
+                templateUrl: "views/widgets/templates/widget-editor.view.client.html",
+                controller: "WidgetEditController",
+                controllerAs: "model"
+            })
         ;
 
         // $locationProvider.html5Mode(true);
