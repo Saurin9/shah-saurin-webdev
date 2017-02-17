@@ -21,7 +21,7 @@
         init();
 
         function getEditorTemplateUrl(type) {
-            return 'views/widgets/templates/editors/widget-'+type+'-editor.view.client.html';
+            return 'views/widgets/templates/editors/widget-'+vm.widget.widgetType+'-editor.view.client.html';
         }
 
         function update(editedWidget) {
