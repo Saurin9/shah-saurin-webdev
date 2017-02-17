@@ -10,7 +10,7 @@
             { "_id": "123", "widgetType": "HEADER", "pageId": "321", "size": "2", "text": "GIZMODO"},
             { "_id": "234", "widgetType": "HEADER", "pageId": "321", "size": "4", "text": "Lorem ipsum"},
             { "_id": "345", "widgetType": "IMAGE", "pageId": "321", "width": "100%",
-                "url": "http://wallpaper-gallery.net/images/best-wallpaper/best-wallpaper-5.jpg"},
+                "url": "http://lorempixel.com/400/200/sports"},
             { "_id": "456", "widgetType": "HTML", "pageId": "321", "text": "<p>Lorem ipsum HTML text</p>"},
             { "_id": "567", "widgetType": "HEADER", "pageId": "321", "size": "4", "text": "Lorem ipsum"},
             { "_id": "678", "widgetType": "YOUTUBE", "pageId": "321", "width": "100%",
@@ -48,54 +48,7 @@
             return null;
         }
         
-        
-        // function createWidget(new_pageId, widget) {
-        //     // var widget_new = {_id: (new Date()).getTime().toString(),
-        //     //     widgetType: widget.widgetType,
-        //     //     pageId: new_pageId,
-        //     //     size: widget.size,
-        //     //     text: widget.text};
-        //     // widgets.push(widget_new);
-        //     //console.log(widget);
-        //         if(widget.widgetType === "HEADER") {
-        //             var widget_new = {
-        //                 _id: (new Date()).getTime().toString(),
-        //                 widgetType: "HEADER",
-        //                 pageId: new_pageId,
-        //                 size: widget.size,
-        //                 text : widget.text};
-        //             // return angular.copy(widgetToUpdate);
-        //         }
-        //         else if(widget.widgetType === "HTML") {
-        //             var widget_new = {
-        //                 _id: (new Date()).getTime().toString(),
-        //                 widgetType: "HTML",
-        //                 pageId: new_pageId,
-        //                 text: widget.text};
-        //             //return angular.copy(widgetToUpdate);
-        //         }
-        //         else if(widget.widgetType === "IMAGE") {
-        //             var widget_new = {
-        //                 _id: (new Date()).getTime().toString(),
-        //                 widgetType: "IMAGE",
-        //                 pageId: new_pageId,
-        //                 width: widget.width,
-        //                 url: widget.url
-        //             };
-        //             //return angular.copy(widgetToUpdate);
-        //         }
-        //         else{
-        //             var widget_new = {
-        //                 _id: (new Date()).getTime().toString(),
-        //                 widgetType: "YOUTUBE",
-        //                 pageId: new_pageId,
-        //                 width: widget.width,
-        //                 url: widget.url
-        //             };
-        //         }
-        //     widgets.push(widget_new);
-        //
-        // }
+
 
         function createWidget(pageId, widget) {
             var newWidget;

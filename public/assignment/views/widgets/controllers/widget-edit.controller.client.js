@@ -39,7 +39,6 @@
             $location.url("/user/" + vm.userId + "/website/" + vm.website + "/page/" + vm.pageId + "/widget/");
         }
 
-
     }
 
 

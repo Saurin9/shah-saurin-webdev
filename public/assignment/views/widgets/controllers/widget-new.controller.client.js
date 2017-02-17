@@ -26,8 +26,6 @@
         }
 
         function createWidget(widget) {
-            //WidgetService.createWidget(vm.pageId,widget);
-           // $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget");
             var newWidget;
             if(vm.widgetType === 'HEADER') {
                 newWidget = {"text": widget.text, "size": widget.size, "widgetType" : vm.widgetType};
@@ -43,14 +41,6 @@
                 $location.url("/user/"+ vm.userId +"/website/"+ vm.websiteId +"/page/" + vm.pageId + "/widget/");
             }
         }
-
-        // function createWebsite(website) {
-        //     WebsiteService.createWebsite(vm.userId, website);
-        //     // vm.websites = WebsiteService.findAllWebsitesForUser(vm.userId);
-        //     $location.url("/user/" + vm.userId + "/website");
-        // };
-
-
 
     }
 })();

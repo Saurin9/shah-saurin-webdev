@@ -15,9 +15,6 @@
         }
         init();
 
-        console.log(vm.pages);
-
-
     }
 
 })();

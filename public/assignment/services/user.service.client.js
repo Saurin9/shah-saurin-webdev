@@ -12,10 +12,10 @@
         ];
 
         var api = {
-            "findUserByCredentials": findUserByCredentials,              // Maps the name of the function name by which it is known
-                                                                      // outside to what it is known here (out:here). Both may be
-                                                                      // different. But 'here' should be same as what is defined
-                                                                      // inside this file
+            "findUserByCredentials": findUserByCredentials,     // Maps the name of the function name by which it is known
+                                                                // outside to what it is known here (out:here). Both may be
+                                                                // different. But 'here' should be same as what is defined
+                                                                // inside this file
             "findUserById": findUserById,
             "updateUser": updateUser,
             "createUser": createUser,
