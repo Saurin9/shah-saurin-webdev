@@ -23,7 +23,7 @@
                    // console.log(user);
                     var promise = UserService.createUser(user);
                     promise.success(function (user) {
-                            $location.url('/profile/' + user._id);
+                        $location.url('/profile/' + user._id);
                     });
                 });
 

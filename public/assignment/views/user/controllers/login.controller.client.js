@@ -21,8 +21,6 @@
                 // function in promise.function() as user (any name would work here)
                 var promise = UserService.findUserByCredentials(user.username, user.password);
                 promise.success(function (user) {          // 'user' is the user JSON object returned by the server by $http.get
-                    var loginUser = user;
-                    console.log(loginUser);
                     if(user){
                         $location.url('/profile/' + user._id);
                     }

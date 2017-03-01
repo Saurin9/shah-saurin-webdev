@@ -41,8 +41,17 @@
         }
 
         function deleteAccount(userToDelete) {
-            UserService.deleteUser(vm.userId, userToDelete);
-            $location.url('/login');
+            UserService
+                .deleteUser(vm.userId, userToDelete)
+                .success(function (user) {
+                   if(user){
+                       $location.url('/login');
+                   }
+                   else{
+                       vm.error = "Unable to delete the user !";    // ** This is not working !! Check!!
+                   }
+                });
+            // $location.url('/login');
         }
 
 
