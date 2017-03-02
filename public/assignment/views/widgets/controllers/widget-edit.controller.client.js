@@ -15,8 +15,19 @@
         vm.deleteWidget = deleteWidget;
 
         function init() {
-            vm.widget = WidgetService.findWidgetById(vm.widgetId);
-            vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+            // vm.widget = WidgetService.findWidgetById(vm.widgetId);
+            WidgetService
+                .findWidgetById(vm.widgetId)
+                .success(function (widget) {
+                    vm.widget = widget;
+                });
+
+            // vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+            WidgetService
+                .findWidgetsByPageId(vm.pageId)
+                .success(function (widgets) {
+                    vm.widgets = widgets;
+                })
         }
         init();
 
@@ -25,19 +36,30 @@
         }
 
         function update(editedWidget) {
-            var widget = WidgetService.updateWidget(vm.widgetId, editedWidget);
-            if(widget==null){
-                vm.error = "Unable to update website !";
-            }
-            else{
-                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/");
-            }
+            // var widget = WidgetService.updateWidget(vm.widgetId, editedWidget);
+            WidgetService
+                .updateWidget(vm.widgetId, editedWidget)
+                .success(function (widget) {
+                    if(widget==null){
+                        vm.error = "Unable to update website !";
+                    }
+                    else{
+                        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/");
+                    }
+                })
         }
 
         function deleteWidget() {
-            WidgetService.deleteWidget(vm.widgetId);
-            $location.url("/user/" + vm.userId + "/website/" + vm.website + "/page/" + vm.pageId + "/widget/");
+            // WidgetService.deleteWidget(vm.widgetId);
+            WidgetService
+                .deleteWidget(vm.widgetId)
+                .success(function (widget) {
+                    if(widget){
+                        $location.url("/user/" + vm.userId + "/website/" + vm.website + "/page/" + vm.pageId + "/widget/");
+                    }
+                })
         }
+
 
     }
 

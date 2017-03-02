@@ -20,12 +20,15 @@
 </nav>
 
 <div class="container-fluid">
+    <div wbdv-sortable="">
     <div ng-repeat="widget in model.widgets">
         <div class="ss-toolbar pull-right">
             <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
+            <a class="handle">
             <span class="glyphicon glyphicon-align-justify"></span>
+            </a>
         </div>
 
         <!--Either write this one line OR write the whole '<ng-switch>....</ng-switch>' as written below, any ONE-->
@@ -51,6 +54,7 @@
             </div>
 
         </div>
+    </div>
     </div>
     <br>
     <br>
