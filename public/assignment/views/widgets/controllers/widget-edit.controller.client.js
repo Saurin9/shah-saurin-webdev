@@ -9,7 +9,8 @@
         vm.websiteId = $routeParams['wid'];
         vm.pageId = $routeParams['pid'];
         vm.widgetId = $routeParams['wgid'];
-        
+
+
         vm.getEditorTemplateUrl = getEditorTemplateUrl;
         vm.update = update;
         vm.deleteWidget = deleteWidget;

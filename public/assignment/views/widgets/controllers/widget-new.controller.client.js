@@ -12,6 +12,7 @@
         vm.widgetId = $routeParams['wgid'];
         vm.widgetType = $routeParams['wgtype'];
 
+
         vm.getEditorTemplateUrl = getEditorTemplateUrl;
         vm.createWidget = createWidget;
 

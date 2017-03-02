@@ -2,6 +2,8 @@
 
         <div class="col-sm-12 ss-right-margin">
             <h3>NEW IMAGE</h3>
+            <form action="/api/upload"   method="post" enctype="multipart/form-data">
+
             <div class="form-group">
                 <label for="Name">
                     Name
@@ -34,11 +36,20 @@
                     <option>100%</option>
                 </select>
             </div>
+            <!--<div class="form-group">-->
+                <!--<label for="Upload">-->
+                    <!--Upload-->
+                <!--</label>-->
+                <!--<input id="Upload" type="file" class="form-control ss-right-margin" placeholder="wwww.image.com/image.jpg"></input>-->
+            <!--</div>-->
             <div class="form-group">
-                <label for="Upload">
-                    Upload
-                </label>
-                <input id="Upload" type="file" class="form-control ss-right-margin" placeholder="wwww.image.com/image.jpg"></input>
+                <input  name="myFile"    type="file" class="form-control"/>
+                <input  name="width"     value="{{model.widget.width}}" style="display: none"/>
+                <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
+                <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
+                <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
+                <input  name="widgetId"  value="{{model.widget._id}}"   style="display: none"/>
+                <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
             </div>
             <div class="ss-button-padding class=" form-group"">
             <a class="btn btn-primary btn-block form-control"
@@ -48,6 +59,7 @@
             <a class="btn btn-success btn-block form-control"
                ng-click="model.createWidget(model.widget)">Create</a>
             </div>
+    </form>
         </div>
     </div>
 
