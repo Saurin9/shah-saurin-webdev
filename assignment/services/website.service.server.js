@@ -31,6 +31,7 @@ module.exports = function (app) {
         for (var w in websites){
             if(websites[w]._id === wid){
                 res.json(websites[w]);
+                return;
             }
         }
        // return null;

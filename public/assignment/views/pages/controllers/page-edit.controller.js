@@ -14,24 +14,44 @@
 
 
         function init() {
-            vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
-            vm.page = PageService.findPageById(vm.pageId);
-        };
+            // vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
+            PageService
+                .findPageByWebsiteId(vm.websiteId)
+                .success(function (pages) {
+                    vm.pages = pages;
+                });
+
+            // vm.page = PageService.findPageById(vm.pageId);
+            PageService
+                .findPageById(vm.pageId)
+                .success(function (page) {
+                    vm.page = page;
+                });
+        }
         init();
 
         function deletePage() {
-            PageService.deletePage(vm.pageId);
-            $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+            PageService
+                .deletePage(vm.pageId)
+                .success(function (page) {
+                    if(page){
+                        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");
+                    }
+                })
         }
 
         function update(editedPage) {
-            var page = PageService.updatePage(vm.pageId, editedPage);
-            if(page == null){
-                vm.error = "Unable to update page !";
-            }
-            else{
-                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");;
-            }
+            // var page = PageService.updatePage(vm.pageId, editedPage);
+            PageService
+                .updatePage(vm.pageId, editedPage)
+                .success(function (page) {
+                    if(page == null){
+                        vm.error = "Unable to update page !";
+                    }
+                    else{
+                        $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page");;
+                    }
+                })
         }
 
 
