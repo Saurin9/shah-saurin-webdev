@@ -1,5 +1,5 @@
 module.exports = function () {
-    var model = {};
+    // var model = {};
     var mongoose = require("mongoose");
     var UserSchema = require("./user.schema.server")();
     var UserModel  = mongoose.model("UserModel", UserSchema);
@@ -14,10 +14,26 @@ module.exports = function () {
         //findWebsitesForUser: findWebsitesForUser,
         updateUser: updateUser,
         deleteUser: deleteUser,
-        setModel: setModel
+        setModel: setModel,
+        addWebsiteIdToUser: addWebsiteIdToUser
     };
     return api;
 
+
+    function addWebsiteIdToUser(userId,websiteId) {
+        var deferred = Q.defer();
+
+        UserModel
+            .update({_id:userId},{$push:{websites:websiteId}},function (err,user) {
+                if(err){
+                    deferred.abort();
+                }else {
+                    deferred.resolve(user);
+                }
+            });
+        return deferred.promise;
+
+    }
     function setModel(_model) {
         model = _model;
     }

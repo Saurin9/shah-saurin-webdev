@@ -6,6 +6,8 @@ module.exports = function (app, model) {
     app.put('/api/website/:websiteId', updateWebsite);
     app.post('/api/user/:userId/website', createWebsite);
 
+    //var usermodel = model.userModel;
+
     // var websites = [
     //     { "_id": "123", "name": "Facebook",    "developerId": "456", "description": "Lorem" },
     //     { "_id": "234", "name": "Tweeter",     "developerId": "456", "description": "Lorem" },
@@ -119,7 +121,17 @@ module.exports = function (app, model) {
             .createWebsite(userId, website)
             .then(
                 function (website_new) {
-                    res.json(website_new);
+                    model
+                        .userModel
+                        .addWebsiteIdToUser(userId,website_new._id)
+                        .then(
+
+                            function(add) {
+
+                                res.json(website_new);
+                            }),function () {
+                        res.sendStatus(400);
+                    }
                 },
                 function (err) {
                     res.sendStatus(400);
