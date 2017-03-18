@@ -42,10 +42,10 @@ module.exports = function (app, model) {
 
     function findWebsiteById(req, res) {
         var wid = req.params['websiteId'];
-        var userId = req.params['userId'];
+        //var userId = req.params['userId'];
         model
             .websiteModel
-            .findWebsiteById(wid,userId)
+            .findWebsiteById(wid)
             .then(
                 function (site) {
                     res.json(site);
@@ -73,10 +73,34 @@ module.exports = function (app, model) {
                 function (site) {
                     res.json(site);
                 },
+
                 function (err) {
                     res.sendStatus(400);
                 }
             );
+        // model
+        //     .userModel
+        //     .deleteWebsiteOfUser(user)
+        //     .then(
+        //         function (user) {
+        //
+        //             model
+        //                 .websiteModel
+        //                 .deleteWebsite(wid)
+        //                 .then(
+        //                     function (site) {
+        //                          res.json(site);
+        //                     },
+        //                     function (err) {
+        //                         res.sendStatus(400);
+        //                     }
+        //                 );
+        //         },
+        //
+        //         function (err) {
+        //             res.sendStatus(400);
+        //         }
+        //     );
 
         // for (var w in websites){
         //     if(websites[w]._id === wid){
@@ -125,13 +149,13 @@ module.exports = function (app, model) {
                         .userModel
                         .addWebsiteIdToUser(userId,website_new._id)
                         .then(
-
-                            function(add) {
-
+                            function(websiteId) {
                                 res.json(website_new);
-                            }),function () {
-                        res.sendStatus(400);
-                    }
+                            },
+                            function (err) {
+                                res.sendStatus(400);
+                            }
+                        );
                 },
                 function (err) {
                     res.sendStatus(400);

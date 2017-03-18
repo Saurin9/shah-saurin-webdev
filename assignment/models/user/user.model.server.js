@@ -28,7 +28,7 @@ module.exports = function () {
                 if(err){
                     deferred.abort();
                 }else {
-                    deferred.resolve(user);
+                    deferred.resolve(websiteId);
                 }
             });
         return deferred.promise;

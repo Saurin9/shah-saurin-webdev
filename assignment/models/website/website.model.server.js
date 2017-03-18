@@ -10,9 +10,9 @@ module.exports = function () {
         setModel: setModel,
         createWebsite: createWebsite,
         findWebsitesByUser: findWebsitesByUser,
-        // findWebsiteById: findWebsiteById,
-        // deleteWebsite: deleteWebsite,
-        // updateWebsite: updateWebsite
+        findWebsiteById: findWebsiteById,
+        deleteWebsite: deleteWebsite,
+        updateWebsite: updateWebsite
     };
     return api;
 
@@ -23,11 +23,11 @@ module.exports = function () {
     function findWebsitesByUser(userId) {
         var deferred = Q.defer();
         WebsiteModel
-            .find({"_user": userId}, function (err, user) {
+            .find({"_user": userId}, function (err, website) {
                 if(err){
                     deferred.abort(err);
                 } else{
-                    deferred.resolve(user);
+                    deferred.resolve(website);
                 }
             });
         return deferred.promise;
@@ -35,27 +35,55 @@ module.exports = function () {
 
     function createWebsite(userId, website) {
         var deferred = Q.defer();
+        website._user = userId;
         WebsiteModel
-            .create(website, function (err, user) {
+            .create(website, function (err, website) {
                 if(err){
                     deferred.abort(err);
                 } else{
-                    deferred.resolve(user);
+                    deferred.resolve(website);
                 }
             });
         return deferred.promise;
     }
 
-    // function findWebsiteById () {
-    //
-    // }
+    function findWebsiteById (websiteId) {
+        var deferred = Q.defer();
+        WebsiteModel
+            .findOne({"_id": websiteId}, function (err, website) {
+                if(err){
+                    deferred.abort(err);
+                } else{
+                    deferred.resolve(website);
+                }
+            });
+        return deferred.promise;
+    }
 
-    //
-    // function deleteWebsite() {
-    //
-    // }
 
-    // function updateWebsite() {
-    //
-    // }
+    function deleteWebsite(websiteId) {
+        var deferred = Q.defer();
+        WebsiteModel
+            .remove({"_id":websiteId}, function (err, website) {
+                if(err){
+                    deferred.abort(err);
+                } else{
+                    deferred.resolve(website);
+                }
+            });
+        return deferred.promise;
+    }
+
+    function updateWebsite(websiteId, website) {
+        var deferred = Q.defer();
+        WebsiteModel
+            .update({"_id":websiteId}, {name: website.name, description: website.description,}, function (err, website) {
+                if(err){
+                    deferred.abort(err);
+                } else{
+                    deferred.resolve(website);
+                }
+            });
+        return deferred.promise;
+    }
 };
