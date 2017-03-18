@@ -16,6 +16,7 @@
                 var promise = UserService.findUserByUsername(user.username);
 
                 promise.success(function (user) {
+                    console.log(user);
                     vm.error1 = "This username already exists. Please choose another one !";
                 });
 

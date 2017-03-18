@@ -13,7 +13,7 @@ require("./test/app.js")(app);
 var assignment = require("./assignment/app.js");   //'require' returns a module which we can execute as a
                                                    // function using '()'
 assignment(app);        // pass an instance of the 'Express' library (i.e. 'app' as declared on top) which allows
-                        // to listen for various HTTP requests. This call loads the server.js in the 'assignment/app.js'
+                        // to listen for various HTTP requests. This call loads the app.js in the 'assignment/services'
                         // in the root directory.
 
 
