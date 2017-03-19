@@ -13,7 +13,7 @@ module.exports = function() {
         websites: [{type: mongoose.Schema.Types.ObjectId, ref:'WebsiteSchema'}],
         dateCreated: {type: Date, default: Date.now}
         // websites: [WebsiteSchema],
-    }, {collection: "user"});
+    }, {collection: "userDB"});
     return UserSchema;
 };
 

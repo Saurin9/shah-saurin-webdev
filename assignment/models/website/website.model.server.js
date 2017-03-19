@@ -12,7 +12,8 @@ module.exports = function () {
         findWebsitesByUser: findWebsitesByUser,
         findWebsiteById: findWebsiteById,
         deleteWebsite: deleteWebsite,
-        updateWebsite: updateWebsite
+        updateWebsite: updateWebsite,
+        addPageToWebsite: addPageToWebsite
     };
     return api;
 
@@ -20,14 +21,28 @@ module.exports = function () {
         model = _model;
     }
 
+    function addPageToWebsite(websiteId, page) {
+        var deferred = Q.defer();
+
+        WebsiteModel
+            .update({_id:websiteId},{$push:{pages:page._id}},function (err,website) {
+                if(err){
+                    deferred.abort();
+                }else {
+                    deferred.resolve(website);
+                }
+            });
+        return deferred.promise;
+    }
+
     function findWebsitesByUser(userId) {
         var deferred = Q.defer();
         WebsiteModel
-            .find({"_user": userId}, function (err, website) {
+            .find({"_user": userId}, function (err, websites) {
                 if(err){
                     deferred.abort(err);
                 } else{
-                    deferred.resolve(website);
+                    deferred.resolve(websites);
                 }
             });
         return deferred.promise;

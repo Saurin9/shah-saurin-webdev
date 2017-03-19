@@ -20,15 +20,15 @@ module.exports = function () {
     return api;
 
 
-    function addWebsiteIdToUser(userId,websiteId) {
+    function addWebsiteIdToUser(userId,website) {
         var deferred = Q.defer();
 
         UserModel
-            .update({_id:userId},{$push:{websites:websiteId}},function (err,user) {
+            .update({_id:userId},{$push:{websites:website._id}},function (err,user) {
                 if(err){
-                    deferred.abort();
+                    deferred.abort(err);
                 }else {
-                    deferred.resolve(websiteId);
+                    deferred.resolve(user);
                 }
             });
         return deferred.promise;

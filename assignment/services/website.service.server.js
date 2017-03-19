@@ -144,13 +144,13 @@ module.exports = function (app, model) {
             .websiteModel
             .createWebsite(userId, website)
             .then(
-                function (website_new) {
+                function (newWebsite) {
                     model
                         .userModel
-                        .addWebsiteIdToUser(userId,website_new._id)
+                        .addWebsiteIdToUser(userId,newWebsite)
                         .then(
-                            function(websiteId) {
-                                res.json(website_new);
+                            function(user) {
+                                res.json(newWebsite);
                             },
                             function (err) {
                                 res.sendStatus(400);
