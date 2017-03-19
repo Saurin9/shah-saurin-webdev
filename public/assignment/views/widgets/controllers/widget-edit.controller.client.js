@@ -20,6 +20,7 @@
             WidgetService
                 .findWidgetById(vm.widgetId)
                 .success(function (widget) {
+                    console.log(widget);
                     vm.widget = widget;
                 });
 
@@ -33,6 +34,7 @@
         init();
 
         function getEditorTemplateUrl(type) {
+            //console.log(vm.widget.widgetType)
             return 'views/widgets/templates/editors/widget-'+vm.widget.widgetType+'-editor.view.client.html';
         }
 

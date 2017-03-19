@@ -12,12 +12,40 @@ module.exports = function () {
         findPageByWebsiteId: findPageByWebsiteId,
         findPageById: findPageById,
         deletePage: deletePage,
-        updatePage: updatePage
+        updatePage: updatePage,
+        addWidgetToPage: addWidgetToPage,
+        removeWidgetFromPage: removeWidgetFromPage
     };
     return api;
 
     function setModel(_model) {
         model = _model;
+    }
+
+    function addWidgetToPage(widget) {
+        var deferred = Q.defer();
+        PageModel
+            .update({"_id": widget._page}, {$push:{widgets: widget._id}}, function (err, page) {
+                if(err){
+                    deferred.abort(err);
+                } else{
+                    deferred.resolve(page);
+                }
+            });
+        return deferred.promise;
+    }
+
+    function removeWidgetFromPage (widget) {
+        var deferred = Q.defer();
+        PageModel
+            .update({"_id": widget._page}, {$pull:{widgets: widget._id}}, function (err, page) {
+                if(err){
+                    deferred.abort(err);
+                } else{
+                    deferred.resolve(page);
+                }
+            });
+        return deferred.promise;
     }
 
     function findPageByWebsiteId(websiteId) {
@@ -77,7 +105,7 @@ module.exports = function () {
     function updatePage(pageId, page) {
         var deferred = Q.defer();
         PageModel
-            .update({"_id":pageId}, {name: page.name, description: page.description,}, function (err, page) {
+            .update({"_id":pageId}, {name: page.name, description: page.description}, function (err, page) {
                 if(err){
                     deferred.abort(err);
                 } else{

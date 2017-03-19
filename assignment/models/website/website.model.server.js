@@ -25,7 +25,7 @@ module.exports = function () {
         var deferred = Q.defer();
 
         WebsiteModel
-            .update({_id:websiteId},{$push:{pages:page._id}},function (err,website) {
+            .update({_id: websiteId},{$push:{pages:page._id}},function (err,website) {
                 if(err){
                     deferred.abort();
                 }else {

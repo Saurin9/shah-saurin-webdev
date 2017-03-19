@@ -77,79 +77,163 @@ module.exports = function (app, model) {
 
     function findWidgetsByPageId (req, res) {
         var pageId = req.params['pageId'];
-        var widgetsById = [];
-        for (var w in widgets){
-            if(widgets[w].pageId === pageId){
-                widgetsById.push(widgets[w]);
-            }
-        }
-        res.json(widgetsById);
+        model
+            .widgetModel
+            .findWidgetsByPageId(pageId)
+            .then(
+                function (widgets) {
+                    res.json(widgets);
+                },
+                function (err) {
+                    res.sendStatus(400);
+                }
+            );
+        // var widgetsById = [];
+        // for (var w in widgets){
+        //     if(widgets[w].pageId === pageId){
+        //         widgetsById.push(widgets[w]);
+        //     }
+        // }
+        // res.json(widgetsById);
     }
 
     function findWidgetById (req, res) {
         var widgetId = req.params['widgetId'];
-        for(var w in widgets){
-            if(widgets[w]._id === widgetId){
-                res.json(widgets[w]);
-            }
-        }
-        // return null;
+        model
+            .widgetModel
+            .findWidgetById(widgetId)
+            .then(
+                function (widgets) {
+                    console.log(widgets)
+                    res.json(widgets);
+                },
+                function (err) {
+                    res.sendStatus(400);
+                }
+            );
+
+        // for(var w in widgets){
+        //     if(widgets[w]._id === widgetId){
+        //         res.json(widgets[w]);
+        //     }
+        // }
+        // // return null;
     }
 
     function createWidget (req, res) {
         var pageId = req.params['pageId'];
         var widget = req.body;
-        var newWidget;
-        if(widget.widgetType === "HEADER") {
-            newWidget = { "_id": (new Date()).getTime().toString(),
-                "widgetType": widget.widgetType, "pageId": pageId, "size": widget.size, "text": widget.text};
-        } else if (widget.widgetType === "HTML") {
-            newWidget = { "_id": (new Date()).getTime().toString(),
-                "widgetType": widget.widgetType, "pageId": pageId, "text": widget.text};
-        } else {
-            newWidget = { "_id": (new Date()).getTime().toString(),
-                "widgetType": widget.widgetType, "pageId": pageId, "width": widget.width, "url": widget.url};
-        }
-        widgets.push(newWidget);
-        res.json(newWidget);
+        model
+            .widgetModel
+            .createWidget(pageId, widget)
+            .then(
+                function (widget) {
+
+                    model
+                        .pageModel
+                        .addWidgetToPage(widget)
+                        .then(
+                            function (page) {
+                                res.json(widget);
+                            },
+                            function (err) {
+                                res.sendStatus(400);
+                            }
+                        )
+                },
+                function (err) {
+                    res.sendStatus(400);
+                }
+            );
+
+        // var newWidget;
+        // if(widget.widgetType === "HEADER") {
+        //     newWidget = { "_id": (new Date()).getTime().toString(),
+        //         "widgetType": widget.widgetType, "pageId": pageId, "size": widget.size, "text": widget.text};
+        // } else if (widget.widgetType === "HTML") {
+        //     newWidget = { "_id": (new Date()).getTime().toString(),
+        //         "widgetType": widget.widgetType, "pageId": pageId, "text": widget.text};
+        // } else {
+        //     newWidget = { "_id": (new Date()).getTime().toString(),
+        //         "widgetType": widget.widgetType, "pageId": pageId, "width": widget.width, "url": widget.url};
+        // }
+        // widgets.push(newWidget);
+        // res.json(newWidget);
     }
 
     function updateWidget (req, res) {
         var widgetId = req.params['widgetId'];
         var widget = req.body;
-        for(var w in widgets) {
-            var widgetToUpdate = widgets[w];
-            if (widgetToUpdate._id === widgetId) {
-                if(widgetToUpdate.widgetType === "HEADER") {
-                    widgetToUpdate.size = widget.size;
-                    widgetToUpdate.text = widget.text;
-                    res.json(widgetToUpdate);
-                    return;
-                } else if(widgetToUpdate.widgetType === "HTML") {
-                    widgetToUpdate.text = widget.text;
-                    res.json(widgetToUpdate);
-                    return;
-                } else {
-                    widgetToUpdate.width = widget.width;
-                    widgetToUpdate.url = widget.url;
-                    res.json(widgetToUpdate);
-                    return;
+        model
+            .widgetModel
+            .updateWidget(widgetId, widget)
+            .then(
+                function (widget) {
+                    res.json(widget);
+                },
+                function (err) {
+                    res.sendStatus(400);
                 }
-            }
-        }
-        // return null;
+            );
+
+        // for(var w in widgets) {
+        //     var widgetToUpdate = widgets[w];
+        //     if (widgetToUpdate._id === widgetId) {
+        //         if(widgetToUpdate.widgetType === "HEADER") {
+        //             widgetToUpdate.size = widget.size;
+        //             widgetToUpdate.text = widget.text;
+        //             res.json(widgetToUpdate);
+        //             return;
+        //         } else if(widgetToUpdate.widgetType === "HTML") {
+        //             widgetToUpdate.text = widget.text;
+        //             res.json(widgetToUpdate);
+        //             return;
+        //         } else {
+        //             widgetToUpdate.width = widget.width;
+        //             widgetToUpdate.url = widget.url;
+        //             res.json(widgetToUpdate);
+        //             return;
+        //         }
+        //     }
+        // }
+        // // return null;
     }
 
+    // DO, NOT WORKING PROPERLY
     function deleteWidget (req, res) {
         var widgetId = req.params['widgetId'];
-        for(var w in widgets) {
-            var widgetToDelete = widgets[w];
-            if (widgetToDelete._id === widgetId) {
-                widgets.splice(w,1);
-                res.json(widgetToDelete);
-            }
-        }
-        // return null;
+        model
+            .widgetModel
+            .deleteWidget(widgetId)
+            .then(
+                function (widget) {
+                    //res.json(widget);
+                    console.log(widget);
+                    model
+                        .pageModel
+                        .removeWidgetFromPage(widget._page, widget)
+                        .then(
+                            function (page) {
+                                res.json(widget);
+                            },
+                            function (err) {
+                                res.sendStatus(400);
+                            }
+
+                        )
+                },
+                function (err) {
+                    res.sendStatus(400);
+                }
+            );
+        // for(var w in widgets) {
+        //     var widgetToDelete = widgets[w];
+        //     if (widgetToDelete._id === widgetId) {
+        //         widgets.splice(w,1);
+        //         res.json(widgetToDelete);
+        //     }
+        // }
+        // // return null;
     }
 
 };
