@@ -13,6 +13,7 @@ module.exports = function () {
         findWidgetById: findWidgetById,
         deleteWidget: deleteWidget,
         updateWidget: updateWidget,
+        deleteAllWidgetsForPage: deleteAllWidgetsForPage
         //reorderWidget: reorderWidget
     };
     return api;
@@ -21,6 +22,26 @@ module.exports = function () {
         model = _model;
     }
 
+    function deleteAllWidgetsForPage (widgets) {
+        var deferred = Q.defer();
+        var widgetList = [];
+        for (var i = 0; i < widgets.length; i++) {
+            widgetList.push(widgets[i]);
+        }
+        for (var w in widgetList) {
+            WidgetModel
+                .remove({_id: widgets[w]}, function (err, widget) {
+                    if (err) {
+                        deferred.abort(err);
+                    } else {
+                        deferred.resolve(widget);
+                    }
+                });
+        }
+        deferred.resolve(widgets);
+        return deferred.promise;
+    }
+    
     function findWidgetsByPageId(pageId) {
         var deferred = Q.defer();
         WidgetModel
@@ -69,6 +90,7 @@ module.exports = function () {
                 if(err){
                     deferred.abort(err);
                 } else{
+                    console.log(widget);
                     deferred.resolve(widget);
                 }
             });

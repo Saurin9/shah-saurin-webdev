@@ -15,10 +15,26 @@ module.exports = function () {
         updateUser: updateUser,
         deleteUser: deleteUser,
         setModel: setModel,
-        addWebsiteIdToUser: addWebsiteIdToUser
+        addWebsiteIdToUser: addWebsiteIdToUser,
+        removeWebsiteFromUser: removeWebsiteFromUser
     };
     return api;
 
+    function removeWebsiteFromUser (websiteId, userId) {
+        var deferred = Q.defer();
+        UserModel
+            .update(
+                {_id : userId}, {$pull : {websites : websiteId}},
+                function (err, user) {
+                    if(err) {
+                        deferred.abort(err);
+                    } else {
+                        deferred.resolve(user);
+                    }
+                }
+            );
+        return deferred.promise;
+    }
 
     function addWebsiteIdToUser(userId,website) {
         var deferred = Q.defer();

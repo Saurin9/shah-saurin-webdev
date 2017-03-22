@@ -156,17 +156,87 @@ module.exports = function (app, model) {
 
     function deleteUser(req,res) {
         var userId = req.params['userId'];
+
         model
             .userModel
-            .deleteUser(userId)
+            .findUserByUserId(userId)
             .then(
                 function (user) {
-                    res.json(user);
+                    var websites = [];
+                    for (var i = 0 ; i < user.websites.length ; i++) {
+                        websites.push(user.websites[i]);
+                    }
+                    for(var w in websites) {
+                        model
+                            .websiteModel
+                            .findWebsiteById(websites[w])
+                            .then(
+                                function (website) {
+                                    model
+                                        .pageModel
+                                        .removeAllPagesForWebsite(website.pages)
+                                        .then(
+                                            function () {
+                                                model
+                                                    .userModel
+                                                    .removeWebsiteFromUser(website._id, website._user[0])
+                                                    .then(
+                                                        function () {
+                                                            console.log(website._id);
+                                                            model
+                                                                .websiteModel
+                                                                .deleteWebsite(website._id)
+                                                                .then(
+                                                                    function (website) {
+                                                                        // res.json(website);
+                                                                    },
+                                                                    function (err) {
+                                                                        res.sendStatus(400).send(err);
+                                                                    }
+                                                                );
+                                                        },
+                                                        function (err) {
+                                                            res.sendStatus(400).send(err);
+                                                        }
+                                                    );
+                                            },
+                                            function (err) {
+                                                res.sendStatus(400).send(err);
+                                            }
+                                        );
+                                },
+                                function (err) {
+                                    res.sendStatus(400).send(err);
+                                });
+                    }
+                    model
+                        .userModel
+                        .deleteUser(userId)
+                        .then(
+                            function (newUser) {
+                                res.send(newUser);
+                            },
+                            function (err) {
+                                res.sendStatus(400).send(err);
+                            }
+                        );
                 },
                 function (err) {
-                    res.sendStatus(400);
+                    res.sendStatus(400).send(err);
                 }
             );
+
+        // model
+        //     .userModel
+        //     .deleteUser(userId)
+        //     .then(
+        //         function (user) {
+        //             res.json(user);
+        //         },
+        //         function (err) {
+        //             res.sendStatus(400);
+        //         }
+        //     );
         // for (var u in users){
         //     var user = users[u];
         //     if(user._id === userId){

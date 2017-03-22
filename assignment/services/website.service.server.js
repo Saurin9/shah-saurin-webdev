@@ -65,42 +65,61 @@ module.exports = function (app, model) {
     }
 
     function deleteWebsite(req, res) {
-        var wid = req.params['websiteId'];
-        model
-            .websiteModel
-            .deleteWebsite(wid)
-            .then(
-                function (site) {
-                    res.json(site);
-                },
-
-                function (err) {
-                    res.sendStatus(400);
-                }
-            );
+        var websiteId = req.params['websiteId'];
         // model
-        //     .userModel
-        //     .deleteWebsiteOfUser(user)
+        //     .websiteModel
+        //     .deleteWebsite(wid)
         //     .then(
-        //         function (user) {
-        //
-        //             model
-        //                 .websiteModel
-        //                 .deleteWebsite(wid)
-        //                 .then(
-        //                     function (site) {
-        //                          res.json(site);
-        //                     },
-        //                     function (err) {
-        //                         res.sendStatus(400);
-        //                     }
-        //                 );
+        //         function (site) {
+        //             res.json(site);
         //         },
         //
         //         function (err) {
         //             res.sendStatus(400);
         //         }
         //     );
+
+        model
+            .websiteModel
+            .findWebsiteById(websiteId)
+            .then(
+                function (website) {
+                    model
+                        .pageModel
+                        .removeAllPagesForWebsite(website.pages)
+                        .then(
+                            function () {
+                                model
+                                    .userModel
+                                    .removeWebsiteFromUser(websiteId, website._user[0])
+                                    .then(
+                                        function (website) {
+                                            model
+                                                .websiteModel
+                                                .deleteWebsite(websiteId)
+                                                .then(
+                                                    function (website) {
+                                                        res.json(website);
+                                                    },
+                                                    function (err) {
+                                                        res.sendStatus(400).send(err);
+                                                    }
+                                                );
+                                        },
+                                        function (err) {
+                                            res.sendStatus(400).send(err);
+                                        }
+                                    );
+                            },
+                            function (err) {
+                                res.sendStatus(400).send(err);
+                            }
+                        );
+                },
+                function (err) {
+                    res.sendStatus(400).send(err);
+                });
+
 
         // for (var w in websites){
         //     if(websites[w]._id === wid){

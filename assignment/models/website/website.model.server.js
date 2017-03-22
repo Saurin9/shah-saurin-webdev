@@ -13,19 +13,34 @@ module.exports = function () {
         findWebsiteById: findWebsiteById,
         deleteWebsite: deleteWebsite,
         updateWebsite: updateWebsite,
-        addPageToWebsite: addPageToWebsite
+        addPageToWebsite: addPageToWebsite,
+        removePageFromWebsite: removePageFromWebsite
     };
     return api;
 
     function setModel(_model) {
         model = _model;
     }
-
+    
     function addPageToWebsite(websiteId, page) {
         var deferred = Q.defer();
 
         WebsiteModel
             .update({_id: websiteId},{$push:{pages:page._id}},function (err,website) {
+                if(err){
+                    deferred.abort();
+                }else {
+                    deferred.resolve(website);
+                }
+            });
+        return deferred.promise;
+    }
+    
+    function removePageFromWebsite (page) {
+        var deferred = Q.defer();
+
+        WebsiteModel
+            .update({_id: page._website},{$pull:{pages:page._id}},function (err,website) {
                 if(err){
                     deferred.abort();
                 }else {

@@ -20,7 +20,7 @@
             WidgetService
                 .findWidgetById(vm.widgetId)
                 .success(function (widget) {
-                    console.log(widget);
+                   // console.log(widget);
                     vm.widget = widget;
                 });
 

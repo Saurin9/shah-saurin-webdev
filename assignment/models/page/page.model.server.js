@@ -14,12 +14,54 @@ module.exports = function () {
         deletePage: deletePage,
         updatePage: updatePage,
         addWidgetToPage: addWidgetToPage,
-        removeWidgetFromPage: removeWidgetFromPage
+        removeWidgetFromPage: removeWidgetFromPage,
+        removeAllPagesForWebsite: removeAllPagesForWebsite
     };
     return api;
 
     function setModel(_model) {
         model = _model;
+    }
+    
+    function removeAllPagesForWebsite (pages) {
+        var deferred = Q.defer();
+
+        var pageList = [];
+        for(var i = 0; i < pages.length ; i++) {
+            pageList.push(pages[i]);
+        }
+
+        for(var p in pageList) {
+            var pageId = pageList[p];
+            PageModel
+                .findOne({_id: pageId}, function (err, page) {
+                    if (err) {
+                        deferred.abort(err);
+                    } else {
+                        model
+                            .widgetModel
+                            .deleteAllWidgetsForPage(page.widgets)
+                            .then(
+                                function () {
+                                    PageModel
+                                        .remove({_id: page._id}, function (err, page) {
+                                            if (err) {
+                                                deferred.abort(err);
+                                            } else {
+                                                deferred.resolve(page);
+                                            }
+                                        });
+                                    deferred.resolve(page);
+                                },
+                                function (err) {
+                                    deferred.abort(err);
+                                }
+                            );
+                    }
+                });
+        }
+        deferred.resolve(pages);
+        return deferred.promise;
     }
 
     function addWidgetToPage(widget) {

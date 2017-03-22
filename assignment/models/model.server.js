@@ -15,8 +15,10 @@ module.exports = function () {
         widgetModel: widgetModel
     };
 
-    // websiteModel.setModel(model);
-    // userModel.setModel(model);
+    userModel.setModel(model);
+    websiteModel.setModel(model);
+    pageModel.setModel(model);
+    widgetModel.setModel(model);
 
     return model;
 };

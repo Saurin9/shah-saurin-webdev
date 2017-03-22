@@ -118,15 +118,46 @@ module.exports = function (app, model) {
 
     function deletePage(req, res){
         var pageId = req.params['pageId'];
+
         model
             .pageModel
-            .deletePage(pageId)
+            .findPageById(pageId)
             .then(
                 function (page) {
-                    res.json(page);
-                },
-                function (err) {
-                    res.sendStatus(400);
+                    model
+                        .widgetModel
+                        .deleteAllWidgetsForPage(page.widgets)
+                        .then(
+                            function () {
+                                model
+                                    .websiteModel
+                                    .removePageFromWebsite(page)
+                                    .then(
+                                        function (website) {
+                                            model
+                                                .pageModel
+                                                .deletePage(pageId)
+                                                .then(
+                                                    function (page) {
+                                                        res.json(page)
+                                                    },
+                                                    function (err) {
+                                                        res.sendStatus(400).send(err);
+                                                    }
+                                                );
+                                        },
+                                        function (err) {
+                                            res.sendStatus(400).send(err);
+                                        }
+                                    );
+                            },
+                            function (err) {
+                                res.sendStatus(400).send(err);
+                            }
+                        );
+
+                }, function (err) {
+                    res.sendStatus(400).send(err);
                 }
             );
         // for (var p in pages){

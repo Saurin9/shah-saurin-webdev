@@ -104,7 +104,7 @@ module.exports = function (app, model) {
             .findWidgetById(widgetId)
             .then(
                 function (widgets) {
-                    console.log(widgets)
+                    //console.log(widgets)
                     res.json(widgets);
                 },
                 function (err) {
@@ -199,33 +199,45 @@ module.exports = function (app, model) {
         // // return null;
     }
 
-    // DO, NOT WORKING PROPERLY
+
     function deleteWidget (req, res) {
         var widgetId = req.params['widgetId'];
         model
             .widgetModel
-            .deleteWidget(widgetId)
+            .findWidgetById(widgetId)
             .then(
                 function (widget) {
-                    //res.json(widget);
-                    console.log(widget);
                     model
                         .pageModel
-                        .removeWidgetFromPage(widget._page, widget)
+                        .removeWidgetFromPage(widget)
                         .then(
                             function (page) {
-                                res.json(widget);
+                                // res.json(widget);
+                                console.log(widget);
+                                model
+                                    .widgetModel
+                                    .deleteWidget(widgetId)
+                                    .then(
+                                        function (widget) {
+                                            res.json(widget);
+                                        },
+                                        function (err) {
+                                            res.sendStatus(400);
+                                        }
+
+                                    )
                             },
                             function (err) {
                                 res.sendStatus(400);
                             }
-
-                        )
+                        );
                 },
                 function (err) {
                     res.sendStatus(400);
                 }
-            );
+            )
+
+
         // for(var w in widgets) {
         //     var widgetToDelete = widgets[w];
         //     if (widgetToDelete._id === widgetId) {
