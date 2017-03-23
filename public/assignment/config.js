@@ -91,6 +91,17 @@
                 controller: "WidgetEditController",
                 controllerAs: "model"
             })
+            .when("/user/:uid/website/:wid/page/:pid/widget/new/flickrImage", {
+                // templateUrl: "views/widgets/templates/new/widget-flickr-search.view.client.html",
+                templateUrl: "views/widgets/templates/new/widget-flickr-search.view.client.html",
+                controller: "FlickrImageSearchController",
+                controllerAs:"model"
+            })
+            .when("/user/:uid/website/:wid/page/:pid/widget/edit/flickrImage/:wgid", {
+                templateUrl: "views/widgets/templates/new/widget-flickr-search.view.client.html",
+                controller: "FlickrImageSearchController",
+                controllerAs: "model"
+            })
         ;
 
         // $locationProvider.html5Mode(true);

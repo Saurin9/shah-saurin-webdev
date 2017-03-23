@@ -50,12 +50,15 @@
                 <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
                 <input  name="widgetId"  value="{{model.widget._id}}"   style="display: none"/>
                 <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
-
+                <!--<button type="flickr"    class="btn btn-block btn-warning">Flickr Search</button>-->
             </div>
-            <div class="ss-button-padding class=" form-group"">
 
+            <div class="ss-button-padding form-group">
+                <a class="btn btn-warning btn-block form-control"
+                   ng-click="model.goToFlikrSearchPage()">Flickr Search</a>
             </div>
-            <div class="ss-button-padding class=" form-group"">
+
+            <div class="ss-button-padding form-group">
             <a class="btn btn-success btn-block form-control"
                ng-click="model.createWidget(model.widget)">Create</a>
             </div>

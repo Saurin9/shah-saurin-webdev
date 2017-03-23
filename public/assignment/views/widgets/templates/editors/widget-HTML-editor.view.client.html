@@ -9,13 +9,21 @@
             </label>
             <input id="Name" type="text" class="form-control ss-right-margin" placeholder="Name"/>
         </div>
-        <div class="form-group">
-            <label for="Text">
-                Text
-            </label>
-            <input ng-model="model.widget.text"
-                   id="Text" type="text" class="form-control ss-right-margin" placeholder="Text">
+
+        <div ng-model ="model.widget.text"
+             text-angular
+             ta-toolbar ="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+                            ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+                            ['indent','outdent'],['html']]">
         </div>
+
+        <!--<div class="form-group">-->
+            <!--<label for="Text">-->
+                <!--Text-->
+            <!--</label>-->
+            <!--<input ng-model="model.widget.text"-->
+                   <!--id="Text" type="text" class="form-control ss-right-margin" placeholder="Text">-->
+        <!--</div>-->
 
         <div class="ss-button-padding form-group">
             <a class="btn btn-danger btn-block form-control"

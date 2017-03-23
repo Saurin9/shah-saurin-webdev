@@ -10,9 +10,9 @@
         vm.websiteId = $routeParams['wid'];
         vm.pageId = $routeParams['pid'];
         vm.widgetId = $routeParams['wgid'];
-        vm.widgetType = $routeParams['wgtype'];
+        vm.widgetType = $routeParams['wgtype'].toString();
 
-
+        vm.goToFlikrSearchPage = goToFlikrSearchPage;
         vm.getEditorTemplateUrl = getEditorTemplateUrl;
         vm.createWidget = createWidget;
 
@@ -32,6 +32,10 @@
             //     })
         }
         init();
+
+        function goToFlikrSearchPage() {
+            $location.url("/user/"+ vm.userId +"/website/"+ vm.websiteId +"/page/" + vm.pageId + "/widget/new/flickrImage");
+        }
 
         function getEditorTemplateUrl(type) {
             return 'views/widgets/templates/new/widget-'+ vm.widgetType + '-new.view.client.html';

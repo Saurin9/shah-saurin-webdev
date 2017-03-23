@@ -4,61 +4,64 @@
         <div class="col-sm-12 ss-right-margin">
             <h3>IMAGE Editor</h3>
             <form action="/api/upload"   method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="Name">
-                    Name
-                </label>
-                <input id="Name" type="text" class="form-control ss-right-margin" placeholder="Name"/>
-            </div>
-            <div class="form-group">
-                <label for="Text">
-                    Text
-                </label>
-                <input ng-model="model.widget.text"
-                       id="Text" type="text" class="form-control ss-right-margin" placeholder="Text">
-            </div>
-            <div class="form-group">
-                <label for="URL">
-                    URL
-                </label>
-                <input ng-model="model.widget.url"
-                       id="URL" type="url" class="form-control ss-right-margin" placeholder="www.image.com/image.jpg">
-            </div>
-            <div class="form-group">
-                <label for="Width">
-                    Width
-                </label>
-                <select ng-model="model.widget.width" class="form-control" id="Width">
-                    <option>20%</option>
-                    <option>40%</option>
-                    <option>60%</option>
-                    <option>80%</option>
-                    <option>100%</option>
-                </select>
-            </div>
-            <!--<div class="form-group">-->
-                <!--<label for="Upload">-->
-                    <!--Upload-->
-                <!--</label>-->
-                <!--<input id="Upload" type="file" class="form-control ss-right-margin" placeholder="wwww.image.com/image.jpg"></input>-->
-            <!--</div>-->
-            <div class="form-group">
-                <input  name="myFile"    type="file" class="form-control" required/>
-                <input  name="width"     value="{{model.widget.width}}" style="display: none"/>
-                <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
-                <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
-                <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
-                <input  name="widgetId"  value="{{model.widget._id}}"   style="display: none"/>
-                <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
-            </div>
-            <!--<div class="ss-button-padding class=" form-group"">-->
-            <!--<a class="btn btn-primary btn-block form-control"-->
-               <!--href="#">Upload</a>-->
-            <!--</div>-->
-            <div class="ss-button-padding class=" form-group"">
-            <a class="btn btn-danger btn-block form-control"
-               ng-click="model.deleteWidget()">Delete</a>
-            </div>
+                <div class="form-group">
+                    <label for="Name">
+                        Name
+                    </label>
+                    <input id="Name" type="text" class="form-control ss-right-margin" placeholder="Name"/>
+                </div>
+                <div class="form-group">
+                    <label for="Text">
+                        Text
+                    </label>
+                    <input ng-model="model.widget.text"
+                           id="Text" type="text" class="form-control ss-right-margin" placeholder="Text">
+                </div>
+                <div class="form-group">
+                    <label for="URL">
+                        URL
+                    </label>
+                    <input ng-model="model.widget.url"
+                           id="URL" type="url" class="form-control ss-right-margin" placeholder="www.image.com/image.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="Width">
+                        Width
+                    </label>
+                    <select ng-model="model.widget.width" class="form-control" id="Width">
+                        <option>20%</option>
+                        <option>40%</option>
+                        <option>60%</option>
+                        <option>80%</option>
+                        <option>100%</option>
+                    </select>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<label for="Upload">-->
+                        <!--Upload-->
+                    <!--</label>-->
+                    <!--<input id="Upload" type="file" class="form-control ss-right-margin" placeholder="wwww.image.com/image.jpg"></input>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <input  name="myFile"    type="file" class="form-control" required/>
+                    <input  name="width"     value="{{model.widget.width}}" style="display: none"/>
+                    <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
+                    <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
+                    <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
+                    <input  name="widgetId"  value="{{model.widget._id}}"   style="display: none"/>
+                    <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
+                </div>
+
+                <div class="ss-button-padding form-group">
+                <a class="btn btn-warning btn-block form-control"
+                   ng-click="model.goToFlikrSearchPage()">Flickr Search</a>
+                </div>
+
+                <div class="ss-button-padding form-group">
+                <a class="btn btn-danger btn-block form-control"
+                   ng-click="model.deleteWidget()">Delete</a>
+                </div>
+
+            </form>
         </div>
     </div>
-

@@ -10,7 +10,7 @@
         vm.pageId = $routeParams['pid'];
         vm.widgetId = $routeParams['wgid'];
 
-
+        vm.goToFlikrSearchPage = goToFlikrSearchPage;
         vm.getEditorTemplateUrl = getEditorTemplateUrl;
         vm.update = update;
         vm.deleteWidget = deleteWidget;
@@ -32,6 +32,10 @@
                 })
         }
         init();
+
+        function goToFlikrSearchPage() {
+            $location.url("/user/"+ vm.userId +"/website/"+ vm.websiteId +"/page/" + vm.pageId + "/widget/edit/flickrImage/" + vm.widgetId);
+        }
 
         function getEditorTemplateUrl(type) {
             //console.log(vm.widget.widgetType)
