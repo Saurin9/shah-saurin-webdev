@@ -1,0 +1,28 @@
+
+<div class="row">
+
+    <div class="col-sm-12 ss-right-margin">
+        <h3>TEXT Editor</h3>
+
+        Text
+        <input ng-model="model.widget.text" class="form-control"/>
+        Rows
+        <input ng-model="model.widget.rows" class="form-control" type="number"/>
+        Placeholder
+        <input ng-model="model.widget.placeholder" class="form-control"/>
+        Formatted
+        <input ng-model="model.widget.formatted" type="checkbox"/>
+        <!--<div class="form-group">-->
+        <!--<label for="Text">-->
+        <!--Text-->
+        <!--</label>-->
+        <!--<input ng-model="model.widget.text"-->
+        <!--id="Text" type="text" class="form-control ss-right-margin" placeholder="Text">-->
+        <!--</div>-->
+
+        <div class="ss-button-padding form-group">
+            <a class="btn btn-success btn-block form-control"
+               ng-click="model.createWidget(model.widget)">Create</a>
+        </div>
+    </div>
+</div>
