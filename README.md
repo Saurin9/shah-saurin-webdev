@@ -1,4 +1,4 @@
-# shah.saurin-webdev
+# shah-saurin-webdev
 
 1. git clone https://github.com/shahsaurin/shah-saurin-webdev.git
 1. cd shah-saurin-webdev
