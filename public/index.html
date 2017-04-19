@@ -4,67 +4,539 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Web Dev Course Home Page</title>
+    <title>Home Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="./assignment/css/style.css" rel="stylesheet"/>
+
+    <!-- Custom Fonts -->
+    <link href="./assignment/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="./assignment/css/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="./assignment/css/creative.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid ss-navbarcolor">
-            <div class="navbar-text">
-                <a class="ss-whiteicon">
-                    <h4>Northeastern University<h4>
+<!--<body>-->
+    <!--<nav class="navbar navbar-default navbar-fixed-top">-->
+        <!--<div class="container-fluid ss-navbarcolor">-->
+            <!--<div class="navbar-text">-->
+                <!--<a class="ss-whiteicon">-->
+                    <!--<h4>Northeastern University<h4>-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</nav>-->
+
+
+    <!--<div class="container-fluid">-->
+        <!--<div class="ss-form-padding">-->
+            <!--<h3 class="ss-text-center">Web Development Course </h3>-->
+            <!--<h4 class="ss-text-center">Home Page </h4>-->
+
+        <!--</div>-->
+
+        <!--<div class="row  ss-top-padding">-->
+            <!--<div class="col-xs-6 ss-center-align">-->
+
+                <!--<div class="ss-center-align">-->
+                    <!--<a href="project/index.html">-->
+                        <!--<span class="glyphicon glyphicon-book ss-whiteicon glyph-size"> </span>-->
+                    <!--</a>-->
+                    <!--<h3> Project </h3>-->
+                <!--</div>-->
+
+                <!--<div class="ss-top-padding">-->
+                    <!--<a href="test/index.html">-->
+                        <!--<span class="glyphicon glyphicon-comment ss-whiteicon glyph-size"> </span>-->
+                    <!--</a>-->
+                    <!--<h3>Test MongoDB</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="col-xs-6 ss-center-align">-->
+                <!--<div>-->
+                                                                                                    <!--&lt;!&ndash;** WRITE HERE **&ndash;&gt;-->
+                    <!--<a href="assignment/index.html">-->
+                        <!--<span class="glyphicon glyphicon-book ss-whiteicon glyph-size"> </span>-->
+                    <!--</a>-->
+                    <!--<h3>Assignments</h3>-->
+
+                <!--</div>-->
+                <!--<div class="ss-top-padding">-->
+                    <!--<a href="https://github.com/Saurin9/shah-saurin-webdev">-->
+                        <!--<span class="glyphicon glyphicon-link ss-whiteicon glyph-size"> </span>-->
+                    <!--</a>-->
+                    <!--<h3>GitHub Repository</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
+
+<!--</body>-->
+
+<body id="page-top">
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top ss-navbar-transparent">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <!--<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>-->
+                <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll ss-navbar-menu-items-color visible-xs" href="#page-top">SAURIN SHAH</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" class="ss-navbar-menu-items-color" href="#home">Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll ss-navbar-menu-items-color" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll ss-navbar-menu-items-color" href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a class="page-scroll ss-navbar-menu-items-color" href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a class="page-scroll ss-navbar-menu-items-color" href="#links">Links</a>
+                </li>
+                <!--<li>-->
+                <!--<a class="page-scroll" href="#portfolio">Portfolio</a>-->
+                <!--</li>-->
+                <li>
+                    <a class="page-scroll ss-navbar-menu-items-color" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<header id="home">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading" style="color: slategray">Saurin Shah</h1>
+            <hr>
+            <br>
+            <p style="color: white"><strong>Software Developer | Technology Enthusiast | Photographer at heart</strong></p>
+            <!--<p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>-->
+            <a href="#about" class="btn btn-primary btn-xl page-scroll">More about me</a>
+        </div>
+    </div>
+</header>
+
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <img src="./photos/Myprofessionalphoto.jpg" class="img-circle" alt="photo" height="150" width="150">
+                <h2 class="section-heading ss-padding">About me</h2>
+                <hr class="light">
+                <p class="text-faded">Currently I am a graduate student pursuing my Master's degree in Computer Science with interests in Information Retrieval, Web development and Artificial Intelligence.
+
+                    <br><br>At Defense R&D Establishment (DRDO), I led and worked in a team under the guidance of a scientist for our Senior year project. I worked on our system end-to-end and made valuable contributions in design and implementation. The project involved coding in Embedded C and Python on hardware platforms like AVR microcontroller, DSP and ARM11 based Raspberry Pi module. This project stood out amongst the rest as it required competency in various areas in electronics as well as sound programming skills.
+
+                    <br><br>At Northeastern University, I am pursuing my interests and currently working towards building my profile in Information Retrieval and Web Development.
+
+                    <br><br>With an amalgamation of knowledge in Computer Science and Electronics, I am interested in positions in the software industry as well as in industries requiring a mixture of both.
+
+                    <br><br>Currently I am looking for Co-Op and Internship opportunities for Summer and Fall 2017 in my areas of interest and would like to work on challenging projects while learning new technologies and languages.</p>
+                <!--<a href="#service   s" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Skills</h2>
+                <hr class="light">
+                <!--<p class="text-faded"></p>-->
+                <div class="row">
+                    <div class="col-sm-4 col-xs-5">
+                        <p class="pull-right">Languages:</p>
+                    </div>
+                    <div class="col-sm-8 col-xs-7">
+                        <p class="pull-left text-left">Core Java, Python, C, Racket, Embedded C</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-5">
+                        <p class="pull-right">Operating Systems:</p>
+                    </div>
+                    <div class="col-sm-8 col-xs-7">
+                        <p class="pull-left text-left">Windows, Linux (Ubuntu and Raspbian)</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-5">
+                        <p class="pull-right">Software Tools:</p>
+                    </div>
+                    <div class="col-sm-8 col-xs-7">
+                        <p class="pull-left text-left">PyCharm, WebStorm, Heroku, Eclipse, Git, VisualDSP++, Atmel Studio, Proteus</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-5">
+                        <p class="pull-right">Databases:</p>
+                    </div>
+                    <div class="col-sm-8 col-xs-7">
+                        <p class="pull-left text-left">SQL, MongoDB</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-5">
+                        <p class="pull-right">Web Technologies:</p>
+                    </div>
+                    <div class="col-sm-8 col-xs-7">
+                        <p class="pull-left text-left">JavaScript, AngularJS, Node.js, Express, REST API, HTML5, CSS3, Bootstrap, jQuery</p>
+                    </div>
+                </div>
+                <!--<a href="#service   s" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-primary" style="background-color: " id="projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Projects</h2>
+                <hr class="light">
+                <!--<p class="text-faded"></p>-->
+                <div class="row">
+                    <div class="col-sm-6 ss-collapsible-top-padding">
+                        <p class="text-center" style="margin-bottom: 9px; margin-top: 21px">Happy Journey</p>
+                        <div class="text-center row">
+                            <a data-toggle="collapse" data-target="#happyjourney">
+                                <div>
+                                        <span class="text-center">
+                                            <i class="fa fa-chevron-down text-center" style="color: white" aria-hidden="true"></i>
+                                        </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div id="happyjourney" class="collapse ss-white-font">
+                            <div class="row">
+                                <div class="pull-right ss-project-info-padding">Developed a responsive, mobile-first single page application (SPA) that can enable users to search flights and hotels, enquire about specific journeys with registered travel agents to get the best deals and allow hotel owners to list their hotel. It was developed using RESTful web services and MEAN for full stack JavaScript development.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 ss-collapsible-top-padding">
+                        <p class="text-center" style="margin-bottom: 9px; margin-top: 21px">Website Builder</p>
+                        <div class="text-center row">
+                            <a data-toggle="collapse" data-target="#websitebuilder">
+                                <div>
+                                        <span class="text-center">
+                                            <i class="fa fa-chevron-down text-center" style="color: white" aria-hidden="true"></i>
+                                        </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div id="websitebuilder" class="collapse ss-white-font">
+                            <div class="row">
+                                <div class="pull-right ss-project-info-padding">Developed a mobile-friendly and responsive website application using MVC pattern that can be used to design webpages easily using widgets. It was a MEAN stack application and used REST API for server communication.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 ss-collapsible-top-padding">
+                        <p class="text-center" style="margin-bottom: 9px; margin-top: 21px">Search Engine Design</p>
+                        <div class="text-center row">
+                            <a data-toggle="collapse" data-target="#searchengine">
+                                <div>
+                                        <span class="text-center">
+                                            <i class="fa fa-chevron-down text-center" style="color: white" aria-hidden="true"></i>
+                                        </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div id="searchengine" class="collapse ss-white-font">
+                            <div class="row">
+                                <div class="pull-right ss-project-info-padding">Designed and built Information Retrieval (IR) systems in Python using BM25, tf-idf and cosine similarity algorithms
+                                    with feature of query expansion using pseudo relevance feedback.
+                                    <br>Evaluated and compared performance of all systems on CACM test collections in terms of retrieval effectiveness.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-center" style="margin-bottom: 9px; margin-top: 21px">Web Crawler</p>
+                        <div class="text-center row">
+                            <a data-toggle="collapse" data-target="#webcrawler">
+                                <div>
+                                        <span class="text-center">
+                                            <i class="fa fa-chevron-down text-center" style="color: white" aria-hidden="true"></i>
+                                        </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div id="webcrawler" class="collapse ss-white-font">
+                            <div class="row">
+                                <div class="pull-right ss-project-info-padding">Implemented a web crawler in Python that performed focused crawling using BFS and DFS approach.
+                                    • Designed it to crawl only unique Wikipedia articles and filter out administrative links and non-English articles.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="text-center" style="margin-bottom: 9px; margin-top: 21px">Real-time Event Monitoring System</p>
+                        <div class="text-center row">
+                            <a data-toggle="collapse" data-target="#rtems">
+                                <div>
+                                        <span class="text-center">
+                                            <i class="fa fa-chevron-down text-center" style="color: white" aria-hidden="true"></i>
+                                        </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div id="rtems" class="collapse ss-white-font">
+                            <div class="row">
+                                <div class="pull-right ss-project-info-padding">• Developed an automated system based on embedded systems using Python and C that eliminates the manual hindrance caused during the traditional process of capturing and recording photos and videos at various events.
+                                    <br>• Designed the closed loop system that consisted of a BLDC motor controlled by a DSP and FPGA which accurately positioned the 1080p Full HD camera interfaced to the ARM based Raspberry Pi module.
+                                    <br>• Established wireless communication using 802.15.4 protocol and wired serial communication across the subsystems.
+                                    <br>• Achieved high camera positioning accuracy of 0.064 degrees by tuning the BLDC motor using PID parameters.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-center" style="margin-bottom: 9px; margin-top: 21px">Triple Stage Security System</p>
+                        <div class="text-center row">
+                            <a data-toggle="collapse" data-target="#tsss">
+                                <div>
+                                        <span class="text-center">
+                                            <i class="fa fa-chevron-down text-center" style="color: white" aria-hidden="true"></i>
+                                        </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div id="tsss" class="collapse ss-white-font">
+                            <div class="row">
+                                <div class="pull-right ss-project-info-padding">Led and worked in a team of 3 students to design and program a system in Embedded C that can be used to enhance security at places like banks lockers, restricted areas etc. using ATmega-16 microcontroller and GSM communication.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<a href="#service   s" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>-->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="links">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Explore some of my work</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center ss-linkedin-blue">
+                <a href="https://www.linkedin.com/in/saurin-shah">
+                    <div class="service-box" >
+                        <!--<i class="fa fa-4x fa-diamond text-primary sr-icons"></i>-->
+                        <i  class="fa fa-4x fa-linkedin-square text-primary sr-icons ss-linkedin-blue" aria-hidden="true"></i>
+                        <h3>LinkedIn Profile</h3>
+                        <!--<p class="text-muted">Our templates are updated regularly so they don't break.</p>-->
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <a href="https://flights-n-hotels.herokuapp.com">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons ss-icon-black"></i>
+                        <h3>Project</h3>
+                        <!--<p class="text-muted">You can use this theme as is, or you can make changes!</p>-->
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <a href="https://shah-saurin-webdev.herokuapp.com/assignment/index.html">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons ss-icon-black"></i>
+                        <h3>Assignments</h3>
+                        <!--<p class="text-muted">We update dependencies to keep things fresh.</p>-->
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <a href="https://github.com/shahsaurin/shah-saurin-webdev">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-github text-primary sr-icons ss-icon-black"></i>
+                        <!--<i class="fa fa-4x fa-linkedin-square text-primary sr-icons" aria-hidden="true"></i>-->
+                        <h3>Github Repository</h3>
+                        <!--<p class="text-muted">You have to make your websites with love these days!</p>-->
+                    </div>
                 </a>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
+<!--<section class="no-padding" id="portfolio">-->
+<!--<div class="container-fluid">-->
+<!--<div class="row no-gutter popup-gallery">-->
+<!--<div class="col-lg-4 col-sm-6">-->
+<!--<a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">-->
+<!--<img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">-->
+<!--<div class="portfolio-box-caption">-->
+<!--<div class="portfolio-box-caption-content">-->
+<!--<div class="project-category text-faded">-->
+<!--Category-->
+<!--</div>-->
+<!--<div class="project-name">-->
+<!--Project Name-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div class="col-lg-4 col-sm-6">-->
+<!--<a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">-->
+<!--<img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">-->
+<!--<div class="portfolio-box-caption">-->
+<!--<div class="portfolio-box-caption-content">-->
+<!--<div class="project-category text-faded">-->
+<!--Category-->
+<!--</div>-->
+<!--<div class="project-name">-->
+<!--Project Name-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div class="col-lg-4 col-sm-6">-->
+<!--<a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">-->
+<!--<img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">-->
+<!--<div class="portfolio-box-caption">-->
+<!--<div class="portfolio-box-caption-content">-->
+<!--<div class="project-category text-faded">-->
+<!--Category-->
+<!--</div>-->
+<!--<div class="project-name">-->
+<!--Project Name-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div class="col-lg-4 col-sm-6">-->
+<!--<a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">-->
+<!--<img src="img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">-->
+<!--<div class="portfolio-box-caption">-->
+<!--<div class="portfolio-box-caption-content">-->
+<!--<div class="project-category text-faded">-->
+<!--Category-->
+<!--</div>-->
+<!--<div class="project-name">-->
+<!--Project Name-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div class="col-lg-4 col-sm-6">-->
+<!--<a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">-->
+<!--<img src="img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">-->
+<!--<div class="portfolio-box-caption">-->
+<!--<div class="portfolio-box-caption-content">-->
+<!--<div class="project-category text-faded">-->
+<!--Category-->
+<!--</div>-->
+<!--<div class="project-name">-->
+<!--Project Name-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div class="col-lg-4 col-sm-6">-->
+<!--<a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">-->
+<!--<img src="img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">-->
+<!--<div class="portfolio-box-caption">-->
+<!--<div class="portfolio-box-caption-content">-->
+<!--<div class="project-category text-faded">-->
+<!--Category-->
+<!--</div>-->
+<!--<div class="project-name">-->
+<!--Project Name-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
 
-    <div class="container-fluid">
-        <div class="ss-form-padding">
-            <h3 class="ss-text-center">Web Development Course </h3>
-            <h4 class="ss-text-center">Home Page </h4>
+<!--<aside class="bg-dark">-->
+<!--<div class="container text-center">-->
+<!--<div class="call-to-action">-->
+<!--<h2>Free Download at Start Bootstrap!</h2>-->
+<!--<a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Download Now!</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</aside>-->
 
-        </div>
-
-        <div class="row  ss-top-padding">
-            <div class="col-xs-6 ss-center-align">
-
-                <div class="ss-center-align">
-                    <a href="project/index.html">
-                        <span class="glyphicon glyphicon-book ss-whiteicon glyph-size"> </span>
-                    </a>
-                    <h3> Project </h3>
-                </div>
-
-                <div class="ss-top-padding">
-                    <a href="test/index.html">
-                        <span class="glyphicon glyphicon-comment ss-whiteicon glyph-size"> </span>
-                    </a>
-                    <h3>Test MongoDB</h3>
-                </div>
+<section class="bg-primary" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Reaching out to me !</h2>
+                <hr class="primary">
+                <p>Call me or drop me an email</p>
             </div>
-
-            <div class="col-xs-6 ss-center-align">
-                <div>
-                                                                                                    <!--** WRITE HERE **-->
-                    <a href="assignment/index.html">
-                        <span class="glyphicon glyphicon-book ss-whiteicon glyph-size"> </span>
-                    </a>
-                    <h3>Assignments</h3>
-
-                </div>
-                <div class="ss-top-padding">
-                    <a href="https://github.com/Saurin9/shah-saurin-webdev">
-                        <span class="glyphicon glyphicon-link ss-whiteicon glyph-size"> </span>
-                    </a>
-                    <h3>GitHub Repository</h3>
-                </div>
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+                <i class="fa fa-phone fa-3x sr-contact"></i>
+                <p>+1-857-308-9616</p>
             </div>
-
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                <p>shah.sauri@husky.neu.edu</p>
+            </div>
         </div>
     </div>
+</section>
+
+<!-- jQuery -->
+<script src="./js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="./js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="./js/scrollreveal.min.js"></script>
+<script src="./js/jquery.magnific-popup.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="./js/creative.min.js"></script>
 
 </body>
+
 </html>

@@ -119,3 +119,45 @@ a:hover {
     width: 100%;
     height: 100%;
 }
+
+.ss-linkedin-blue{
+    color: rgb(0,119,181) !important;
+}
+
+.ss-white-font{
+    color: white !important;
+}
+
+.ss-collapsible-top-padding{
+    padding-top: 15px;
+}
+
+.ss-bottom-margin{
+    margin-bottom: 2px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.ss-padding{
+    padding-top: 25px;
+}
+
+.ss-navbar-menu-items-color{
+    color: grey !important;
+}
+
+.ss-navbar-transparent{
+    opacity: 1;
+}
+
+.ss-icon-black{
+    color: black !important;
+}
+
+.ss-project-info-padding{
+    padding-left: 5px;
+    padding-right: 5px;
+    opacity: 0.9;
+}

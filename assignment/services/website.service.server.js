@@ -31,7 +31,7 @@ module.exports = function (app, model) {
                 }
             );
         // var userId = req.params['userId'];
-        // var sites = [];
+        // var sites = []   ;
         // for (var w in websites){
         //     if(websites[w].developerId === userId){
         //         sites.push(websites[w]);
